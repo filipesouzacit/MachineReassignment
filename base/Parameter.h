@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include <algorithm>
 #include <sys/stat.h>
 #include <cstdint>
 #include <ostream>
