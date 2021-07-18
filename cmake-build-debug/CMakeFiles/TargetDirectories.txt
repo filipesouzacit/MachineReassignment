@@ -1,0 +1,3 @@
+/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/ROAED2012.dir

@@ -1,0 +1,4 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=/Users/filipe/vcpkg/scripts/buildsystems/vcpkg.cmake -G "CodeBlocks - Unix Makefiles" /Users/filipe/CLionProjects/ROAED2012
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug
