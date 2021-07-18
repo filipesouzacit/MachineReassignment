@@ -4,8 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/filipe/CLionProjects/ROAED2012/MachineReassignment.cpp" "/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o"
-  "/Users/filipe/CLionProjects/ROAED2012/main.cpp" "/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/ROAED2012.dir/main.cpp.o"
+  "/Users/filipe/CLionProjects/MachineReassignment/main.cpp" "/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/ROAED2012.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

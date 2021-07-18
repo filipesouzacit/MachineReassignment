@@ -63,10 +63,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/filipe/CLionProjects/ROAED2012
+CMAKE_SOURCE_DIR = /Users/filipe/CLionProjects/MachineReassignment
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ROAED2012.dir/depend.make
@@ -79,43 +79,28 @@ include CMakeFiles/ROAED2012.dir/flags.make
 
 CMakeFiles/ROAED2012.dir/main.cpp.o: CMakeFiles/ROAED2012.dir/flags.make
 CMakeFiles/ROAED2012.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ROAED2012.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ROAED2012.dir/main.cpp.o -c /Users/filipe/CLionProjects/ROAED2012/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ROAED2012.dir/main.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ROAED2012.dir/main.cpp.o -c /Users/filipe/CLionProjects/MachineReassignment/main.cpp
 
 CMakeFiles/ROAED2012.dir/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ROAED2012.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/filipe/CLionProjects/ROAED2012/main.cpp > CMakeFiles/ROAED2012.dir/main.cpp.i
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/filipe/CLionProjects/MachineReassignment/main.cpp > CMakeFiles/ROAED2012.dir/main.cpp.i
 
 CMakeFiles/ROAED2012.dir/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ROAED2012.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/filipe/CLionProjects/ROAED2012/main.cpp -o CMakeFiles/ROAED2012.dir/main.cpp.s
-
-CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o: CMakeFiles/ROAED2012.dir/flags.make
-CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o: ../MachineReassignment.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o -c /Users/filipe/CLionProjects/ROAED2012/MachineReassignment.cpp
-
-CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/filipe/CLionProjects/ROAED2012/MachineReassignment.cpp > CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.i
-
-CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/filipe/CLionProjects/ROAED2012/MachineReassignment.cpp -o CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.s
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/filipe/CLionProjects/MachineReassignment/main.cpp -o CMakeFiles/ROAED2012.dir/main.cpp.s
 
 # Object files for target ROAED2012
 ROAED2012_OBJECTS = \
-"CMakeFiles/ROAED2012.dir/main.cpp.o" \
-"CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o"
+"CMakeFiles/ROAED2012.dir/main.cpp.o"
 
 # External object files for target ROAED2012
 ROAED2012_EXTERNAL_OBJECTS =
 
 ROAED2012: CMakeFiles/ROAED2012.dir/main.cpp.o
-ROAED2012: CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o
 ROAED2012: CMakeFiles/ROAED2012.dir/build.make
 ROAED2012: CMakeFiles/ROAED2012.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ROAED2012"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ROAED2012"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/ROAED2012.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -128,6 +113,6 @@ CMakeFiles/ROAED2012.dir/clean:
 .PHONY : CMakeFiles/ROAED2012.dir/clean
 
 CMakeFiles/ROAED2012.dir/depend:
-	cd /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/filipe/CLionProjects/ROAED2012 /Users/filipe/CLionProjects/ROAED2012 /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/ROAED2012.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/filipe/CLionProjects/MachineReassignment /Users/filipe/CLionProjects/MachineReassignment /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/ROAED2012.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ROAED2012.dir/depend
 

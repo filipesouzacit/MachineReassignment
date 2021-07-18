@@ -68,10 +68,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/filipe/CLionProjects/ROAED2012
+CMAKE_SOURCE_DIR = /Users/filipe/CLionProjects/MachineReassignment
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -100,9 +100,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/ROAED2012/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -143,33 +143,6 @@ ROAED2012/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/build
 .PHONY : ROAED2012/fast
 
-MachineReassignment.o: MachineReassignment.cpp.o
-
-.PHONY : MachineReassignment.o
-
-# target to build an object file
-MachineReassignment.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.o
-.PHONY : MachineReassignment.cpp.o
-
-MachineReassignment.i: MachineReassignment.cpp.i
-
-.PHONY : MachineReassignment.i
-
-# target to preprocess a source file
-MachineReassignment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.i
-.PHONY : MachineReassignment.cpp.i
-
-MachineReassignment.s: MachineReassignment.cpp.s
-
-.PHONY : MachineReassignment.s
-
-# target to generate assembly for a file
-MachineReassignment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/MachineReassignment.cpp.s
-.PHONY : MachineReassignment.cpp.s
-
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -206,9 +179,6 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... ROAED2012"
-	@echo "... MachineReassignment.o"
-	@echo "... MachineReassignment.i"
-	@echo "... MachineReassignment.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

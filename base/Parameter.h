@@ -68,7 +68,6 @@ namespace MRBD
         return p;
     }
 
-    std::mutex mutexUpdateBestSolution;
     time_t startTime;
     int16_t runTime = 300;
     int32_t seed = 10;
