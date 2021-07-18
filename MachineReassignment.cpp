@@ -59,14 +59,14 @@ int main(int argc, char** argv){
         return 1;
     }
     Str sseed = to_string(MRBD::seed) + ".";
-    Str stringpath = "../solution/"+ test +"/";
+    Str stringpath = "../result/solution/"+ test +"/";
     int status = mkdir(stringpath.c_str(),0777);
     MRBD::inst = instance;
     MRBD::instancePath = "data/model_";
     MRBD::inicSolutionPath = "data/assignment_";
-    MRBD::solutionPath = "../solution/"+ test +"/solution_";
-    MRBD::dataPlotPath = "../solution/"+ test +"/dataPlot_";
-    MRBD::treeDataPlotPath = "../solution/"+ test +"/tree_dataPlot_";
+    MRBD::solutionPath = "../result/solution/"+ test +"/solution_";
+    MRBD::dataPlotPath = "../result/solution/"+ test +"/dataPlot_";
+    MRBD::treeDataPlotPath = "../result/solution/"+ test +"/tree_dataPlot_";
     MRBD::instancePath.append(instance).append(".txt");
     MRBD::inicSolutionPath.append(instance).append(".txt");
     MRBD::solutionPath.append(sseed).append(instance).append(".txt");
