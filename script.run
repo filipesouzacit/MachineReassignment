@@ -1,3 +1,4 @@
+#!/bin/bash
 ./MachineReassignment typeSearch=2 instance=b_3 test=004 selectProcesses=4 subProblemSizeInit=4 subProblemSizeMax=100 runTime=300 failuresMax=400 discrepancyMax=5 seed=1
 ./MachineReassignment typeSearch=2 instance=b_4 test=004 selectProcesses=4 subProblemSizeInit=4 subProblemSizeMax=100 runTime=300 failuresMax=400 discrepancyMax=5 seed=1
 ./MachineReassignment typeSearch=2 instance=b_5 test=004 selectProcesses=4 subProblemSizeInit=4 subProblemSizeMax=100 runTime=300 failuresMax=400 discrepancyMax=5 seed=1
