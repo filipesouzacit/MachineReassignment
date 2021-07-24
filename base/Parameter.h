@@ -90,6 +90,7 @@ namespace MRBD
     Id selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
     Id printFreq = 1000000;
     Str inst = "";
+    Str testId = "000";
     std::string instancePath = "../data/model_";
     std::string inicSolutionPath  = "../data/assignment_";
     std::string solutionPath = "../solution/solution_";

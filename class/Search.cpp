@@ -8,9 +8,9 @@ using namespace MRBD;
 Search::Search()
 {
     instance_ = Instance();
-    std::cout << "Instance: " << MRBD::inst << " - Init Cost: " << instance_.getObjectiveCost() << std::endl;
+    std::cout << "Test: " << MRBD::testId << " Seed: " << MRBD::seed <<  " Instance: " << MRBD::inst <<
+    " - Init Cost: " << instance_.getObjectiveCost() << std::endl;
     subProblemSizeMax = MRBD::subProblemSizeMax > instance_.qttProcesses() ? instance_.qttProcesses(): MRBD::subProblemSizeMax;
-
     machineIndices.reserve(instance_.qttMachines()+1);
     machineIndices2.reserve(instance_.qttMachines()+1);
     machineCosts.reserve(instance_.qttMachines()+1);
@@ -202,7 +202,11 @@ void Search::createSubProblemProcessMaxCost(){
 
 void Search::createSubProblemUnbalancedMachine(){
     Qtt numProcess = 0;
-    Qtt numMachine = (rand()%(subProblemSize/2))+1;
+    if(numMachine<10){
+        numMachine++;
+    }else{
+        numMachine = 1;
+    }
     Id j,p;
     Id m = getMachine();
     Machine *machine = instance_.machine(m);
@@ -374,6 +378,9 @@ void Search::LDS(Id parent) {
             Qtt discrepancy = 0;
             while(terminateLDS(discrepancy, pid)){
                 m=selectAndRemoveMachine(p);
+                if(m==-1){
+                    break;
+                }
                 instance_.assignMachineToProcess(m, p);
  //               qttSearch++;
                 if (consistent(p, m)) {

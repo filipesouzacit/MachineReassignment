@@ -6,7 +6,6 @@
 using namespace std;
 
 int main(int argc, char** argv){
-    Str test = "0";
     Str instance = "";
     MRBD::Param param;
     for (int i=1; i<argc; ++i){
@@ -16,7 +15,7 @@ int main(int argc, char** argv){
         else if(param.name=="instance")
             instance = param.value;
         else if(param.name=="test")
-            test = param.value;
+            MRBD::testId = param.value;
         else if(param.name=="selectProcesses")
             MRBD::selectProcesses = (Id) std::stol(param.value);
         else if(param.name=="machineMaxInit")
@@ -59,14 +58,14 @@ int main(int argc, char** argv){
         return 1;
     }
     Str sseed = to_string(MRBD::seed) + ".";
-    Str stringpath = "../result/solution/"+ test +"/";
+    Str stringpath = "../result/solution/"+ MRBD::testId +"/";
     int status = mkdir(stringpath.c_str(),0777);
     MRBD::inst = instance;
     MRBD::instancePath = "data/model_";
     MRBD::inicSolutionPath = "data/assignment_";
-    MRBD::solutionPath = "../result/solution/"+ test +"/solution_";
-    MRBD::dataPlotPath = "../result/solution/"+ test +"/dataPlot_";
-    MRBD::treeDataPlotPath = "../result/solution/"+ test +"/tree_dataPlot_";
+    MRBD::solutionPath = "../result/solution/"+ MRBD::testId +"/solution_";
+    MRBD::dataPlotPath = "../result/solution/"+ MRBD::testId +"/dataPlot_";
+    MRBD::treeDataPlotPath = "../result/solution/"+ MRBD::testId +"/tree_dataPlot_";
     MRBD::instancePath.append(instance).append(".txt");
     MRBD::inicSolutionPath.append(instance).append(".txt");
     MRBD::solutionPath.append(sseed).append(instance).append(".txt");

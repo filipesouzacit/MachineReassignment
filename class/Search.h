@@ -390,6 +390,7 @@ namespace MRBD {
         Qtt subProblemSizeMax = 0;
         Qtt failuresQtt = 0;
         Qtt maxFailures = 0;
+        Qtt numMachine = 1;
         Qtt NumImprovementThreshold = 0;
         Qtt iterations = 0;
         Qtt qttSearch = 0;
@@ -402,6 +403,7 @@ namespace MRBD {
         bool isImprov = true;
         Qtt qttLoadAvaliable = 0;
         Id updated_ = 0;
+
     };
 }
 #endif //ROAED2012_SEARCH_H
