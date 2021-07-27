@@ -202,7 +202,7 @@ namespace MRBD {
             Id bestId, tempD;
             Cost weight;
             if((lns->dsize - lns->dUnSAT + lns->dRemoved) <= MRBD::topValueSeletion){
-                bestId = rand()%lns->dsize;
+                bestId = randNum()%lns->dsize;
                 weight = costMachine[pid][lns->values[bestId]].cost;
                 while(weight==99999999999){
                     tempD = lns->values[lns->dsize-1];
@@ -210,7 +210,7 @@ namespace MRBD {
                     lns->values[bestId] = tempD;
                     lns->dsize--;
                     lns->dRemoved++;
-                    bestId = rand()%lns->dsize;
+                    bestId = randNum()%lns->dsize;
                     weight = costMachine[pid][lns->values[bestId]].cost;
                 }
             }else {
@@ -241,7 +241,7 @@ namespace MRBD {
                         }
                     }
                 }
-                bestId = bestIds[rand()%MRBD::topValueSeletion];
+                bestId = bestIds[randNum()%MRBD::topValueSeletion];
             }
             lns->dsize--;
             if (bestId < lns->dsize){
@@ -358,7 +358,7 @@ namespace MRBD {
                 m = machineIndices[mIndex_];
                 instance_.sortProcessMaxBenefit(m);
             }else{
-                mIndex_ = rand()%machineIndices.size();
+                mIndex_ = randNum()%machineIndices.size();
                 toGetBestMachine = true;
                 m = machineIndices[mIndex_];
             }

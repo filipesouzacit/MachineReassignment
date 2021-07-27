@@ -2,4 +2,7 @@
 g++ -std=c++14  -o MachineReassignment MachineReassignment.cpp
 chmod a+x MachineReassignment
 chmod a+x script.run
-nohup ./script.run > ../result/data/outT1.log &
+nohup ./script1.run > ../result/data/out27-06-S1.log &
+
+
+./MachineReassignment typeSearch=2 instance=a2_1 test=007 selectProcesses=4 subProblemSizeInit=10 subProblemSizeMax=10 improvementThreshold=9999999 runTime=10 failuresMax=400 discrepancyMax=5 seed=1 printFreq=1

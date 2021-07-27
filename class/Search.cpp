@@ -98,7 +98,7 @@ void Search::createDomain(){
             if(smallInst){
                 m = mI;
             }else{
-                j = rand()%n_;
+                j = randNum()%n_;
                 n_--;
                 m = machineIndices2[j];
                 machineIndices2[j] = machineIndices2[n_];
@@ -143,12 +143,12 @@ void Search::createSubProblemRandom(){
     Id j,p,m;
     Machine *machine;
     while(unassignedProcessQtt < subProblemSize){
-        m = rand()%instance_.qttMachines();
+        m = randNum()%instance_.qttMachines();
         while(instance_.machine(m)->n == 0){
-            m = rand()%instance_.qttMachines();
+            m = randNum()%instance_.qttMachines();
         }
         machine = instance_.machine(m);
-        j = rand()%machine->n;
+        j = randNum()%machine->n;
         p = machine->processes[j].idProcess;
         setUnassigned(p);
         instance_.unassignProcess(p);
@@ -166,14 +166,14 @@ void Search::createSubProblemMaxCost(){
     instance_.unassignProcess(p);
 
     while(unassignedProcessQtt < subProblemSize){
-        if((((double)rand()/RAND_MAX) < MRBD::pctChangeMachine) or (machine->n == 0)){
-            m = rand()%instance_.qttMachines();
+        if((MRBD::dis(MRBD::randNum) < MRBD::pctChangeMachine) or (machine->n == 0)){
+            m = randNum()%instance_.qttMachines();
             while(instance_.machine(m)->n == 0){
-                m = rand()%instance_.qttMachines();
+                m = randNum()%instance_.qttMachines();
             }
             machine = instance_.machine(m);
         }
-        j = rand()%machine->n;
+        j = randNum()%machine->n;
         p = machine->processes[j].idProcess;
         setUnassigned(p);
         instance_.unassignProcess(p);
@@ -193,7 +193,7 @@ void Search::createSubProblemProcessMaxCost(){
 
     while(unassignedProcessQtt < subProblemSize){
         while(instance_.process(p)->currentMachineId==UNASSIGNED_){
-            p = rand()%instance_.qttProcesses();
+            p = randNum()%instance_.qttProcesses();
         }
         setUnassigned(p);
         instance_.unassignProcess(p);
@@ -217,7 +217,7 @@ void Search::createSubProblemUnbalancedMachine(){
             numProcess = 0;
         }
         if(toGetBestMachine){
-            j = rand()%machine->n;
+            j = randNum()%machine->n;
         }else{
             j = machine->n-1;
         }
@@ -253,7 +253,7 @@ Id Search::selectAndRemoveProcess(){
 Id Search::selectAndRemoveProcessRandom(){
     Id bestId, pid;
     if(currentUnassignedProcessQtt<=MRBD::topVariableSeletion){
-        bestId = rand()%currentUnassignedProcessQtt;
+        bestId = randNum()%currentUnassignedProcessQtt;
     }else{
         Cost weight;
         Id wostId = 0;
@@ -282,7 +282,7 @@ Id Search::selectAndRemoveProcessRandom(){
                 }
             }
         }
-        bestId = bestIds[rand()%MRBD::topVariableSeletion];
+        bestId = bestIds[randNum()%MRBD::topVariableSeletion];
     }
     currentUnassignedProcessQtt--;
     if (bestId != (currentUnassignedProcessQtt)){

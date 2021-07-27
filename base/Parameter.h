@@ -96,7 +96,8 @@ namespace MRBD
     std::string solutionPath = "../solution/solution_";
     std::string dataPlotPath = "../solution/dataPlot_";
     std::string treeDataPlotPath = "../solution/tree_dataPlot_";
-    std::default_random_engine seed_;
+    std::mt19937 randNum;
+    std::uniform_real_distribution<double> dis(0.0,1.0);
 
     bool TRUE_ = true;
     bool FALSE_ = false;
@@ -117,7 +118,5 @@ namespace MRBD
 
     void initSolver(){
         startTime = time(0);
-        seed_ = std::default_random_engine(seed);
-  //      default_selection();
     }
 }

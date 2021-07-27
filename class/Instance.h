@@ -216,7 +216,7 @@ namespace MRBD
                     maxCost = M->totalCost;
                 }
             }
-            mm = rand()%bestM.size();
+            mm = randNum()%bestM.size();
             return bestM[mm];
         }
 
@@ -281,7 +281,7 @@ namespace MRBD
                     maxCost = cost;
                 }
             }
-            mp = rand()%bestP.size();
+            mp = randNum()%bestP.size();
             return bestP[mp];
         }
 
