@@ -66,7 +66,7 @@ void Search::setUnassigned(Id p){
 void Search::createDomain(){
     LNS *lns;
     bool remove_m;
-    Id m,j,bestM;
+    Id m,j,bestM = -1;
     Cost maxCost= -99999999999;
     bool smallInst = instance_.qttMachines() <= MRBD::machineMaxInit;
     Qtt Nmachines =  smallInst ? instance_.qttMachines():MRBD::machineMaxInit;
@@ -124,7 +124,7 @@ void Search::createDomain(){
                         costMachine[i][m].intCost = cost_;
                         costMachine[i][m].updated = -1;
                         costMachine[i][m].itera = iterations;
-                        costMachine[i][wostId].itera = -1;
+                        costMachine[i][lns->values[wostId]].itera = -1;
                         lns->values[wostId] = m;
                         for (Id d=0; d< MRBD::machineMaxSearch;d++){
                             if (maxCost < costMachine[i][lns->values[d]].cost){

@@ -572,7 +572,7 @@ namespace MRBD
             Cost c;
             for (Id r=0; r<resourceQtt_; r++){
                 c = machine->transitiveUsages[r] + machine->usages[r];
-                c += (process->originalMachineId!=m)?process->requirements[r]:0;
+                c += ((process->originalMachineId!=m) or not(resources_[r].transientUsage))?process->requirements[r]:0;
                 if (c > machine->capacities[r]){
                     cost = 99999999999;
                     return cost;

@@ -150,6 +150,7 @@ namespace MRBD {
                 for (Id i = 0; i < unassignedProcessQtt; i++)
                     instance_.setBestMachine(LNS_[i].idProcess,
                                              instance_.process(LNS_[i].idProcess)->currentMachineId);
+
             }
             else{
                 failuresQtt++;
