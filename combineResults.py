@@ -42,5 +42,8 @@ for t in testIds:
     result[t+'_min'] = test2
         
 data = pd.DataFrame(result)
+nmeF = ''
+if len(sys.argv)>1:
+    nmeF = sys.argv[1]
 
-data.to_csv('../result/resultUpdate.csv',index=False)
+data.to_csv('../result/data/resultUpdate'+nmeF+'.csv',index=False)
