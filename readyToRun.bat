@@ -2,7 +2,7 @@
 g++ -std=c++14  -o MachineReassignment MachineReassignment.cpp
 chmod a+x MachineReassignment
 chmod a+x script.run
-nohup ./script1.run > ../result/data/out28-06-S1.log &
+nohup ./script1.run > ../result/data/out03-09-S1.log &
 
 git stash push --include-untracked
 git stash drop
