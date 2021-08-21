@@ -11,4 +11,6 @@ filipesouzacit
 git stash push --include-untracked
 git stash drop
 
+
+
 ./MachineReassignment typeSearch=2 instance=a2_1 test=007 selectProcesses=4 subProblemSizeInit=10 subProblemSizeMax=10 improvementThreshold=9999999 runTime=10 failuresMax=400 discrepancyMax=5 seed=1 printFreq=1
