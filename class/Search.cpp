@@ -433,51 +433,28 @@ void Search::LNSnew() {
 }
 
 void Search::lnsMachineSelection() {
-    Qtt NumMachine = 1;
-//    Qtt improvements = 0;
-//    Qtt notImprovements = 0;
-//    usedMachines.reserve(40);
-//    searchNProcesses2 = 40; //instance_.qttMachines()>200?1:41;
-//    Qtt maxMachine = instance_.qttMachines()<40?instance_.qttMachines():40;
-//    maxMachine = maxMachine < searchNProcesses2 ? maxMachine : searchNProcesses2;
-//    bestCosts.push_back(instance_.bestObjectiveCost());
-//    while (MRBD::checkTime()) {
-//        updated_ = 0;
-//        createSubproblem(NumMachine);
-//        optimise();
-//        if((iterations%500)==0){
-//            machineIndicesSize =0;
-//            std::cout << "iterations: " << iterations << std::endl;
-//        }
-
-//        if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-//            //searchNProcesses2 = instance_.qttMachines()>200?1:2;
-//            notImprovements = 0;
-//            improvements++;
-//        }else{
-//            notImprovements++;
-//        }
-
-//        if (notImprovements > NumImprovementThreshold){
-//            if (NumMachine<maxMachine){
-//                machineIndicesSize =0;
-                //      Qtt maxMachine = instance_.qttMachines() < searchNProcesses2 ? instance_.qttMachines() : searchNProcesses2;
-//                NumMachine = (NumMachine%maxMachine)+1;
-//            }else{
-//                machineIndicesSize =0;
-//                searchNProcesses2 = (searchNProcesses2%searchNProcesses)+1;
-//                searchNProcesses2 = searchNProcesses2<10?10:searchNProcesses2;
-//                maxMachine = instance_.qttMachines()<100?instance_.qttMachines():100;
-//                maxMachine = maxMachine < searchNProcesses2 ? maxMachine : searchNProcesses2;
-//                NumMachine = 1;
-//                if(improvements>0){
-//                    printBestSolution();
-//                    improvements=0;
-//                }
-//            }
-//            notImprovements = 0;
-//        }
-//    }
+    Qtt notImprovements = 0;
+    subProblemSize = MRBD::subProblemSizeInit;
+    bestCosts.push_back(instance_.bestObjectiveCost());
+    while (MRBD::checkTime()) {
+        updated_ = 0;
+        createSubProblem();
+        optimise1();
+        if (oldObjectiveCost > instance_.bestObjectiveCost()) {
+            notImprovements = 0;
+            isImprov = true;
+            subProblemSize = MRBD::subProblemSizeInit;
+        }else{
+            notImprovements++;
+        }
+        if (notImprovements > MRBD::improvementThreshold){
+            notImprovements = 0;
+            subProblemSize++;
+            if (subProblemSize > subProblemSizeMax){
+                subProblemSize = MRBD::subProblemSizeInit;
+            }
+        }
+    }
 }
 
 void Search::start() {

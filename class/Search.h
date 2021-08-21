@@ -123,6 +123,57 @@ namespace MRBD {
             iterations++;
             bestCosts.push_back(instance_.bestObjectiveCost());
         }
+
+        inline void optimise1(){
+            currentUnassignedProcessQtt = unassignedProcessQtt;
+            oldObjectiveCost = instance_.bestObjectiveCost();
+            parent_ = -2;
+            qttSearch = 0;
+            failuresQtt = 0;
+            auto start = std::chrono::high_resolution_clock::now();
+            LDS(parent_);
+            auto elapsed = std::chrono::high_resolution_clock::now() - start;
+            long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
+
+            bestMachines_.push_back({});
+            bestMachines_[bestMachines_.size()-1].push_back(instance_.bestObjectiveCost());
+            bestMachines_[bestMachines_.size()-1].push_back(unassignedProcessQtt);
+            bestMachines_[bestMachines_.size()-1].push_back(microseconds);
+            instance_.setBestObjectiveCost(oldObjectiveCost);
+            for (Id i = 0; i < unassignedProcessQtt; i++){
+                bestMachines_[bestMachines_.size()-1].push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
+            }
+            for (Id i = 0; i < unassignedProcessQtt; i++) {
+                bestMachines_[bestMachines_.size()-1].push_back(LNS_[i].idProcess);
+            }
+            qttSearch = 0;
+            failuresQtt = 0;
+            maxFailures = MRBD::failuresinitialMax;
+            Qtt failures_ = maxFailures;
+            start = std::chrono::high_resolution_clock::now();
+            while(MRBD::failuresMax > failuresQtt && MRBD::checkTime()){
+                RandRestrat(parent_);
+                failures_ *= MRBD::fatorFailuresMax;
+                maxFailures += failures_;
+            }
+            elapsed = std::chrono::high_resolution_clock::now() - start;
+            microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
+            bestMachines_[bestMachines_.size()-1].push_back(instance_.bestObjectiveCost());
+            bestMachines_[bestMachines_.size()-1].push_back(microseconds);
+            for (Id i = 0; i < unassignedProcessQtt; i++){
+                bestMachines_[bestMachines_.size()-1].push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
+            }
+            if(instance_.bestObjectiveCost()>bestMachines_[bestMachines_.size()-1][0]){
+                for (Id i = 0; i < unassignedProcessQtt; i++) {
+                    instance_.setBestMachine(LNS_[i].idProcess,
+                                             bestMachines_[bestMachines_.size()-1][i+3]);
+                }
+            }
+            assignProcess();
+            iterations++;
+            bestCosts.push_back(instance_.bestObjectiveCost());
+        }
+
         inline void createSubProblem() {
             unassignedProcesses = {};
             LNS_ = {};
@@ -307,6 +358,21 @@ namespace MRBD {
             fileOut.close();
         }
 
+        void printLDS_RRS(){
+            std::ofstream fileOut{MRBD::treeDataPlotPath};
+            if (!fileOut.good()) {
+                std::cerr << "ERROR - File not found \"" << MRBD::treeDataPlotPath << "\"" << std::endl;
+                return;
+            }
+            for (Id i=0; i < bestMachines_.size(); i++){
+                for (Id j=0; j < bestMachines_[i].size(); j++){
+                    fileOut << bestMachines_[i][j] << ";";
+                }
+                fileOut << std::endl;
+            }
+            fileOut.close();
+        }
+
         void printCpData(){
             std::ofstream fileOut{MRBD::treeDataPlotPath + ".csv"};
             if (!fileOut.good()) {
@@ -378,6 +444,7 @@ namespace MRBD {
         std::vector<Id> machineIndices;
         std::vector<Id> machineIndices2;
         std::vector<std::vector<CostMachine>> costMachine;
+        std::vector<std::vector<Cost>> bestMachines_;
         std::vector<Id> unassignedProcesses;
         std::vector<Id> noFitProcesses;
         std::vector<Id> usedMachines;

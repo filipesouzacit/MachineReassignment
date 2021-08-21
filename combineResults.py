@@ -38,7 +38,7 @@ for t in testIds:
         test.append(r1)
         test2.append(r2)
         
-    result[t] = test
+    result[t+'_avg'] = test
     result[t+'_min'] = test2
         
 data = pd.DataFrame(result)
