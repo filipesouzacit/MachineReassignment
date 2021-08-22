@@ -2,7 +2,7 @@
 g++ -std=c++14  -o MachineReassignment MachineReassignment.cpp
 chmod a+x MachineReassignment
 chmod a+x script.run
-nohup ./script1.run > ../result/data/out08-08-S1.log &
+nohup ./script1.run > ../result/data/out21-08-S1.log &
 
 ssh fdesouza@143.239.81.1 -p 40022
 ssh fdesouza@143.239.81.140
