@@ -5,24 +5,24 @@ int main() {
 
     MRBD::testId = "666";
     Qtt numRuns = 5;
-    MRBD::typeSearch = 3; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
+    MRBD::typeSearch = 4; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
     MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
 //    MRBD::machineMaxInit = 200;
 //    MRBD::machineMaxSearch = 100;
-    MRBD::subProblemSizeInit = 20;
-    MRBD::subProblemSizeMax  = 20;
-    MRBD::improvementThreshold = 9999999;
+    MRBD::subProblemSizeInit = 30;
+    MRBD::subProblemSizeMax  = 100;
+    MRBD::improvementThreshold = 50;
 //    MRBD::pctChangeMachine = 0.2;
 //    MRBD::pctRandom = 0.5;
     MRBD::runTime = 360;
     MRBD::failuresMax = 400;
     MRBD::fatorFailuresMax = 1.5;
-    MRBD::failuresinitialMax = 31;
+    MRBD::failuresinitialMax = 10;
     MRBD::discrepancyMax = 5;
 //    MRBD::iterationToPrint = 0;
-    MRBD::printFreq = 20;
+    MRBD::printFreq = 10000;
     MRBD::topValueSeletion = 1;
-    MRBD::topVariableSeletion = 5;
+    MRBD::topVariableSeletion = 2;
 
     std::vector<std::string> test = {
                      //            "a1_1",
@@ -60,9 +60,7 @@ int main() {
             MRBD::randNum = std::mt19937(MRBD::seed);
             MRBD::Search search = MRBD::Search();
             MRBD::initSolver();
-            search.lnsMachineSelection();
-            search.printBestSolution();
-            search.printLDS_RRS();
+            search.start();
         }
     }
     return 0;

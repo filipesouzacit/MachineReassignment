@@ -439,7 +439,7 @@ void Search::lnsMachineSelection() {
     while (MRBD::checkTime()) {
         updated_ = 0;
         createSubProblem();
-        optimise1();
+        optimise();
         if (oldObjectiveCost > instance_.bestObjectiveCost()) {
             notImprovements = 0;
             isImprov = true;

@@ -110,7 +110,7 @@ namespace MRBD {
                 LDS(parent_);
             } else if(MRBD::typeSearch == 2){
                 LDS(parent_);
-            }else{
+            }else if(MRBD::typeSearch == 3){
                 maxFailures = MRBD::failuresinitialMax;
                 Qtt failures_ = maxFailures;
                 while(MRBD::failuresMax > failuresQtt && MRBD::checkTime()){
@@ -118,60 +118,37 @@ namespace MRBD {
                     failures_ *= MRBD::fatorFailuresMax;
                     maxFailures += failures_;
                 }
+            }else{
+                LDS_RRS();
             }
             assignProcess();
             iterations++;
             bestCosts.push_back(instance_.bestObjectiveCost());
         }
 
-        inline void optimise1(){
-            currentUnassignedProcessQtt = unassignedProcessQtt;
-            oldObjectiveCost = instance_.bestObjectiveCost();
-            parent_ = -2;
-            qttSearch = 0;
-            failuresQtt = 0;
-            auto start = std::chrono::high_resolution_clock::now();
+        inline void LDS_RRS(){
+            std::vector<Id> bestMachinesLDS;
+            bestMachinesLDS.reserve(unassignedProcessQtt);
             LDS(parent_);
-            auto elapsed = std::chrono::high_resolution_clock::now() - start;
-            long long microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
-
-            bestMachines_.push_back({});
-            bestMachines_[bestMachines_.size()-1].push_back(instance_.bestObjectiveCost());
-            bestMachines_[bestMachines_.size()-1].push_back(unassignedProcessQtt);
-            bestMachines_[bestMachines_.size()-1].push_back(microseconds);
+            Cost bestLDScost = instance_.bestObjectiveCost();
             instance_.setBestObjectiveCost(oldObjectiveCost);
             for (Id i = 0; i < unassignedProcessQtt; i++){
-                bestMachines_[bestMachines_.size()-1].push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
-            }
-            for (Id i = 0; i < unassignedProcessQtt; i++) {
-                bestMachines_[bestMachines_.size()-1].push_back(LNS_[i].idProcess);
+                bestMachinesLDS.push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
             }
             qttSearch = 0;
             failuresQtt = 0;
             maxFailures = MRBD::failuresinitialMax;
             Qtt failures_ = maxFailures;
-            start = std::chrono::high_resolution_clock::now();
             while(MRBD::failuresMax > failuresQtt && MRBD::checkTime()){
                 RandRestrat(parent_);
                 failures_ *= MRBD::fatorFailuresMax;
                 maxFailures += failures_;
             }
-            elapsed = std::chrono::high_resolution_clock::now() - start;
-            microseconds = std::chrono::duration_cast<std::chrono::microseconds>(elapsed).count();
-            bestMachines_[bestMachines_.size()-1].push_back(instance_.bestObjectiveCost());
-            bestMachines_[bestMachines_.size()-1].push_back(microseconds);
-            for (Id i = 0; i < unassignedProcessQtt; i++){
-                bestMachines_[bestMachines_.size()-1].push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
-            }
-            if(instance_.bestObjectiveCost()>bestMachines_[bestMachines_.size()-1][0]){
+            if(instance_.bestObjectiveCost()>bestLDScost){
                 for (Id i = 0; i < unassignedProcessQtt; i++) {
-                    instance_.setBestMachine(LNS_[i].idProcess,
-                                             bestMachines_[bestMachines_.size()-1][i+3]);
+                    instance_.setBestMachine(LNS_[i].idProcess,bestMachinesLDS[i]);
                 }
             }
-            assignProcess();
-            iterations++;
-            bestCosts.push_back(instance_.bestObjectiveCost());
         }
 
         inline void createSubProblem() {

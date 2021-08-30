@@ -6,14 +6,15 @@ chmod a+x script2.run
 chmod a+x script3.run
 chmod a+x script4.run
 chmod a+x script5.run
-nohup ./script1.run > ../result/data/out210824-S1.log &
-nohup ./script2.run > ../result/data/out210824-S2.log &
-nohup ./script3.run > ../result/data/out210824-S3.log &
-nohup ./script4.run > ../result/data/out210824-S4.log &
-nohup ./script5.run > ../result/data/out210824-S5.log &
+nohup ./script1.run > ../result/data/out210825-S1.log &
+nohup ./script2.run > ../result/data/out210825-S2.log &
+nohup ./script3.run > ../result/data/out210825-S3.log &
+nohup ./script4.run > ../result/data/out210825-S4.log &
+nohup ./script5.run > ../result/data/out210825-S5.log &
 
 ssh fdesouza@143.239.81.1 -p 40022
 ssh fdesouza@143.239.81.140
+
 filipesouzacit
 
 git stash push --include-untracked
