@@ -127,14 +127,7 @@ namespace MRBD {
         }
 
         inline void LDS_RRS(){
-            std::vector<Id> bestMachinesLDS;
-            bestMachinesLDS.reserve(unassignedProcessQtt);
             LDS(parent_);
-            Cost bestLDScost = instance_.bestObjectiveCost();
-            instance_.setBestObjectiveCost(oldObjectiveCost);
-            for (Id i = 0; i < unassignedProcessQtt; i++){
-                bestMachinesLDS.push_back(instance_.process(LNS_[i].idProcess)->bestMachineId);
-            }
             qttSearch = 0;
             failuresQtt = 0;
             maxFailures = MRBD::failuresinitialMax;
@@ -143,11 +136,6 @@ namespace MRBD {
                 RandRestrat(parent_);
                 failures_ *= MRBD::fatorFailuresMax;
                 maxFailures += failures_;
-            }
-            if(instance_.bestObjectiveCost()>bestLDScost){
-                for (Id i = 0; i < unassignedProcessQtt; i++) {
-                    instance_.setBestMachine(LNS_[i].idProcess,bestMachinesLDS[i]);
-                }
             }
         }
 
