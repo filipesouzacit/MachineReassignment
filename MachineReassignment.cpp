@@ -57,11 +57,14 @@ int main(int argc, char** argv){
         else if(param.name=="thresholdAltObjFunc")
             MRBD::thresholdAltObjFunc = (Id) std::stol(param.value);
         else if(param.name=="timeLimitAltObjFunc")
-            MRBD::timeLimitAltObjFunc = (Id) std::stol(param.value);
+            MRBD::timeLimitAltObjFunc = (double) std::stod(param.value);
         else if(param.name=="ObjetiveFunctions")
             MRBD::ObjetiveFunctions = MRBD::getArray(param.value);
 
     }
+    cout << MRBD::improvementThresholdOF << "!-!"
+            << MRBD::thresholdAltObjFunc << "!-!"
+            << MRBD::timeLimitAltObjFunc << "!-!";
     if (instance==""){
         cout << "Instance Not Found!!!";
         return 1;
