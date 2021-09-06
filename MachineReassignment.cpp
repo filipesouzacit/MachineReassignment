@@ -52,6 +52,15 @@ int main(int argc, char** argv){
             MRBD::topVariableSeletion = (Id) std::stol(param.value);
         else if(param.name=="seed")
             MRBD::seed = (Id) std::stol(param.value);
+        else if(param.name=="improvementThresholdOF")
+            MRBD::improvementThresholdOF = (Id) std::stol(param.value);
+        else if(param.name=="thresholdAltObjFunc")
+            MRBD::thresholdAltObjFunc = (Id) std::stol(param.value);
+        else if(param.name=="timeLimitAltObjFunc")
+            MRBD::timeLimitAltObjFunc = (Id) std::stol(param.value);
+        else if(param.name=="ObjetiveFunctions")
+            MRBD::ObjetiveFunctions = MRBD::getArray(param.value);
+
     }
     if (instance==""){
         cout << "Instance Not Found!!!";

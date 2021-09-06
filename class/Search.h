@@ -72,7 +72,7 @@ namespace MRBD {
         }
         inline void printBestSolution(){
             std::cout << "iteration: " << iterations
-                      << " best Cost: " << instance_.bestObjectiveCost()
+                      << " best Cost: " << instance_.bestObjectiveCostFull()
                       << " size: "<< subProblemSize << std::endl;
         }
         inline bool terminateLDS(Qtt D, Id pid){
@@ -157,8 +157,8 @@ namespace MRBD {
             createDomain();
         }
         inline void saveSolution() {
-            if (instance_.bestObjectiveCost() > instance_.getObjectiveCost()) {
-                instance_.setBestObjectiveCost(instance_.getObjectiveCost());
+            if (instance_.bestObjectiveCost() > ((instance_).*(instance_.getObjectiveCost))()) {
+                instance_.setBestObjectiveCost(((instance_).*(instance_.getObjectiveCost))());
 //                if(parent_==-1)
 //                    ts_[ts_.size()-1].isBest = TRUE_;
 //                saveBest();
@@ -167,6 +167,7 @@ namespace MRBD {
                     instance_.setBestMachine(LNS_[i].idProcess,
                                              instance_.process(LNS_[i].idProcess)->currentMachineId);
 
+                instance_.updateBestSolution();
             }
             else{
                 failuresQtt++;
@@ -338,6 +339,84 @@ namespace MRBD {
             fileOut.close();
         }
 
+        inline void updateSubProblemSize(){
+            if (oldObjectiveCost > instance_.bestObjectiveCost()) {
+                notImprovements = 0;
+                qttObjetiveFunctionNotImp = 0;
+                isImprov = true;
+                subProblemSize = MRBD::subProblemSizeInit;
+            }else{
+                notImprovements++;
+                qttObjetiveFunctionNotImp++;
+            }
+            if (notImprovements > MRBD::improvementThreshold){
+                notImprovements = 0;
+                subProblemSize++;
+                if (subProblemSize > subProblemSizeMax){
+                    subProblemSize = MRBD::subProblemSizeInit;
+                }
+            }
+        }
+        inline void updateObjetiveCost(){
+            switch (ObjetiveFunctions[IdObjetiveFunction]) {
+                case 1:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost1;
+                    isOriginalOF = false;
+                    break;
+                case 2:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost2;
+                    isOriginalOF = false;
+                    break;
+                case 3:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost3;
+                    isOriginalOF = false;
+                    break;
+                case 4:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost4;
+                    isOriginalOF = false;
+                    break;
+                case 5:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost5;
+                    isOriginalOF = false;
+                    break;
+                case 6:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost6;
+                    isOriginalOF = false;
+                    break;
+                case 7:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCost7;
+                    isOriginalOF = false;
+                    break;
+                default:
+                    instance_.getObjectiveCost = &Instance::getObjectiveCostFull;
+                    isOriginalOF = true;
+                    break;
+            }
+            instance_.setBestObjectiveCost(((instance_).*(instance_.getObjectiveCost))());
+            IdObjetiveFunction++;
+            if(IdObjetiveFunction==ObjetiveFunctions.size())
+                IdObjetiveFunction = 0;
+            qttObjetiveFunctionNotImp = 0;
+            qttObjetiveFunctionAlt = 0;
+        }
+        inline void ObjFuncNoise(){
+            if ((qttObjetiveFunctionNotImp > MRBD::improvementThresholdOF)
+                and (MRBD::checkTimeObjFunc())){
+                updateObjetiveCost();
+            }
+            if (!isOriginalOF){
+                if(qttObjetiveFunctionAlt> MRBD::thresholdAltObjFunc){
+                    isOriginalOF = true;
+                    instance_.getObjectiveCost = &Instance::getObjectiveCostFull;
+                    instance_.setBestObjectiveCost(((instance_).*(instance_.getObjectiveCost))());
+                    qttObjetiveFunctionNotImp = 0;
+                    qttObjetiveFunctionAlt = 0;
+                }else{
+                    qttObjetiveFunctionAlt++;
+                }
+            }
+        }
+
         void printCpData(){
             std::ofstream fileOut{MRBD::treeDataPlotPath + ".csv"};
             if (!fileOut.good()) {
@@ -416,6 +495,11 @@ namespace MRBD {
         std::vector<Cost> bestCosts;
         std::vector<CostMachine> machineCosts;
         std::vector<Id> processes_;
+        std::vector<Id> ObjetiveFunctions;
+        Qtt IdObjetiveFunction = 0;
+        bool isOriginalOF = true;
+        Qtt qttObjetiveFunctionAlt = 0;
+        Qtt qttObjetiveFunctionNotImp = 0;
         Qtt machineIndicesSize = 0;
         Qtt unassignedProcessQtt = 0;
         Qtt currentUnassignedProcessQtt = 0;
@@ -435,6 +519,7 @@ namespace MRBD {
         bool firstSort = false;
         bool isImprov = true;
         Qtt qttLoadAvaliable = 0;
+        Qtt notImprovements = 0;
         Id updated_ = 0;
 
     };

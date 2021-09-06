@@ -68,6 +68,7 @@ namespace MRBD
         Id originalMachineId;
         Id currentMachineId;
         Id bestMachineId;
+        Id bestMachineIdFull;
         Id lnsMachineId;
         std::vector<Cost> requirements;
         Cost requirement;
@@ -85,6 +86,8 @@ namespace MRBD
     class Instance{
     public:
         Instance();
+        typedef  Cost (Instance::*func)();
+        Cost (Instance::*getObjectiveCost)();
         void resourceAdd(Str str);
         void machineAdd(Str str);
         void serviceAdd(Str str);
@@ -106,6 +109,7 @@ namespace MRBD
         inline Cost futureCost() {return futureCost_;}
         inline Cost totalLoadCost() {return totalLoadCost_;}
         inline Cost bestObjectiveCost() {return bestObjectiveCost_;}
+        inline Cost bestObjectiveCostFull() {return bestObjectiveCostFull_;}
         inline Id serviceFromProcess(Id p) {return processes_[p].serviceId;}
         inline void setUsedMachine(Id m) {usedMachines_.insert(m);}
         inline void setCheckCapacity(bool v) {checkCapacity = v;}
@@ -503,17 +507,34 @@ namespace MRBD
             }
         }
 
-        inline Cost getObjectiveCost(){
+        inline Cost getObjectiveCostFull(){
             return totalLoadCost_ + totalBalanceCost_
             + totalProcessMoveCost_ + totalServiceMoveCost_
             + totalMachineMoveCost_;
         }
 
-        inline Cost getObjectiveCost2(){
-            return totalLoadCost_
-                   + totalProcessMoveCost_ + totalServiceMoveCost_
-                   + totalMachineMoveCost_;
+        inline Cost getObjectiveCost1(){
+            return totalLoadCost_ + totalProcessMoveCost_ + totalServiceMoveCost_ + totalMachineMoveCost_;
         }
+        inline Cost getObjectiveCost2(){
+            return totalBalanceCost_ + totalProcessMoveCost_ + totalServiceMoveCost_ + totalMachineMoveCost_;
+        }
+        inline Cost getObjectiveCost3(){
+            return totalLoadCost_ + totalBalanceCost_ + totalServiceMoveCost_ + totalMachineMoveCost_;
+        }
+        inline Cost getObjectiveCost4(){
+            return totalLoadCost_ + totalProcessMoveCost_ + totalBalanceCost_ + totalMachineMoveCost_;
+        }
+        inline Cost getObjectiveCost5(){
+            return totalLoadCost_ + totalProcessMoveCost_ + totalBalanceCost_ + totalServiceMoveCost_;
+        }
+        inline Cost getObjectiveCost6(){
+            return totalProcessMoveCost_ + totalMachineMoveCost_ + totalServiceMoveCost_;
+        }
+        inline Cost getObjectiveCost7(){
+            return totalLoadCost_ + totalBalanceCost_;
+        }
+
 
         inline bool machineCapacityConstraint(Id m){
             if (checkCapacity){
@@ -610,6 +631,15 @@ namespace MRBD
             return cost;
         }
 
+        inline void updateBestSolution(){
+            if(bestObjectiveCostFull_ > getObjectiveCostFull()){
+                bestObjectiveCostFull_ = getObjectiveCostFull();
+                for(Id i=0;i<qttProcesses();i++){
+                    processes_[i].bestMachineIdFull = processes_[i].bestMachineId;
+                }
+            }
+        }
+
 
     private:
         std::vector<Resource> resources_;
@@ -636,6 +666,7 @@ namespace MRBD
         bool checkCapacity      = true;
 
         Cost bestObjectiveCost_  = 0;
+        Cost bestObjectiveCostFull_  = 0;
         Cost futureCost_         = 0;
 
         Qtt processesMovedInServiceMax_    = 0;
@@ -646,6 +677,7 @@ namespace MRBD
         Cost totalProcessMoveCost_ = 0;
         Cost totalServiceMoveCost_ = 0;
         Cost totalMachineMoveCost_ = 0;
+
     };
 
 }

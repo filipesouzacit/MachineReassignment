@@ -134,14 +134,16 @@ void Instance::printSolutionInFile(){
         return;
     }
     for (Id p=0; p < processQtt_; p++)
-        fileOut << processes_[p].bestMachineId << " ";
+        fileOut << processes_[p].bestMachineIdFull << " ";
     fileOut.close();
 }
 
+
+
 Instance::Instance() {
+    getObjectiveCost = &Instance::getObjectiveCostFull;
     Str str,str2;
     int i;
-
     std::ifstream itemStream(MRBD::instancePath);
     if (!itemStream.good()) {
         std::cerr << "ERROR - File not found \"" << MRBD::instancePath << "\"" << std::endl;
@@ -220,7 +222,8 @@ Instance::Instance() {
         incrementTransitiveUsageOfOriginalMachine(p);
         assignMachineToProcess(machineId,p);
     }
-    bestObjectiveCost_ = getObjectiveCost();
+    bestObjectiveCost_ = getObjectiveCostFull();
+    bestObjectiveCostFull_ = bestObjectiveCost_;
 }
 
 bool Instance::machineSatisfyRequirementOfProcess(Id m, Id p){

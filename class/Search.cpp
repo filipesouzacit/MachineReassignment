@@ -8,8 +8,9 @@ using namespace MRBD;
 Search::Search()
 {
     instance_ = Instance();
+    ObjetiveFunctions = MRBD::ObjetiveFunctions;
     std::cout << "Test: " << MRBD::testId << " Seed: " << MRBD::seed <<  " Instance: " << MRBD::inst <<
-    " - Init Cost: " << instance_.getObjectiveCost() << std::endl;
+    " - Init Cost: " << ((instance_).*(instance_.getObjectiveCost))() << std::endl;
     subProblemSizeMax = MRBD::subProblemSizeMax > instance_.qttProcesses() ? instance_.qttProcesses(): MRBD::subProblemSizeMax;
     machineIndices.reserve(instance_.qttMachines()+1);
     machineIndices2.reserve(instance_.qttMachines()+1);
@@ -405,7 +406,7 @@ void Search::LDS(Id parent) {
 }
 
 void Search::LNSnew() {
-    Qtt notImprovements = 0;
+    notImprovements = 0;
     subProblemSize = MRBD::subProblemSizeInit;
     bestCosts.push_back(instance_.bestObjectiveCost());
     while (MRBD::checkTime()) {
@@ -415,21 +416,10 @@ void Search::LNSnew() {
         if((iterations%MRBD::printFreq)==0){
             printBestSolution();
         }
-        if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-            notImprovements = 0;
-            isImprov = true;
-            subProblemSize = MRBD::subProblemSizeInit;
-        }else{
-            notImprovements++;
-        }
-        if (notImprovements > MRBD::improvementThreshold){
-            notImprovements = 0;
-            subProblemSize++;
-            if (subProblemSize > subProblemSizeMax){
-                subProblemSize = MRBD::subProblemSizeInit;
-            }
-        }
+        updateSubProblemSize();
+        ObjFuncNoise();
     }
+    bestCosts.push_back(instance_.bestObjectiveCostFull());
 }
 
 void Search::lnsMachineSelection() {
@@ -440,21 +430,10 @@ void Search::lnsMachineSelection() {
         updated_ = 0;
         createSubProblem();
         optimise();
-        if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-            notImprovements = 0;
-            isImprov = true;
-            subProblemSize = MRBD::subProblemSizeInit;
-        }else{
-            notImprovements++;
-        }
-        if (notImprovements > MRBD::improvementThreshold){
-            notImprovements = 0;
-            subProblemSize++;
-            if (subProblemSize > subProblemSizeMax){
-                subProblemSize = MRBD::subProblemSizeInit;
-            }
-        }
+        updateSubProblemSize();
+        ObjFuncNoise();
     }
+    bestCosts.push_back(instance_.bestObjectiveCostFull());
 }
 
 void Search::start() {

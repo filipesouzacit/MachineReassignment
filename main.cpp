@@ -20,7 +20,7 @@ int main() {
     MRBD::failuresinitialMax = 10;
     MRBD::discrepancyMax = 5;
 //    MRBD::iterationToPrint = 0;
-    MRBD::printFreq = 10000;
+    MRBD::printFreq = 100;
     MRBD::topValueSeletion = 1;
     MRBD::topVariableSeletion = 2;
 

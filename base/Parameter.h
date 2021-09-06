@@ -6,7 +6,7 @@
 #include <sys/time.h>
 #include <iostream>
 #include <unistd.h>
-
+#include <functional>
 #include <algorithm>
 #include <sys/stat.h>
 #include <cstdint>
@@ -57,6 +57,16 @@ namespace MRBD
         return v;
     }
 
+    std::vector<Id> getArray(std::string line){
+        std::vector<Id> intList;
+        std::stringstream ss(line);
+        std::string tmp;
+        while (getline(ss, tmp, ',')) {
+            intList.push_back((Id) std::stol(tmp));
+        }
+        return intList;
+    }
+
     Param getParam(std::string line){
         std::vector<std::string> v;
         std::stringstream ss(line);
@@ -80,6 +90,10 @@ namespace MRBD
     Qtt subProblemSizeInit = 4;
     Qtt subProblemSizeMax = 100;
     Qtt improvementThreshold = 50;
+    Qtt improvementThresholdOF = 500;
+    Qtt thresholdAltObjFunc = 20;
+    double timeLimitAltObjFunc = 0;
+    std::vector<Id> ObjetiveFunctions = {1,2,3,4,5,6,7};
     Qtt failuresMax = 400;
     Qtt failuresinitialMax = 31;
     double fatorFailuresMax = 1.5;
@@ -120,6 +134,11 @@ namespace MRBD
     bool checkTime() {
         return runTime >= totalTime();
     }
+
+    bool checkTimeObjFunc() {
+        return (runTime*timeLimitAltObjFunc) >= totalTime();
+    }
+
 
     void initSolver(){
         startTime = time(0);
