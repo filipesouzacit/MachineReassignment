@@ -27,11 +27,14 @@ git stash drop
 ./MachineReassignment typeSearch=2 instance=a2_1 test=007 selectProcesses=4 subProblemSizeInit=10 subProblemSizeMax=10 improvementThreshold=9999999 runTime=10 failuresMax=400 discrepancyMax=5 seed=1 printFreq=1
 
 
-[1] 32562
-[2] 32563
-[3] 32564
-[4] 32565
-[5] 32570
+./machineReassignment -t 300 -p data/model_a2_1.txt -i data/assignment_a2_1.txt -o sol.csv -name -s 1 -log onscreen
+
+
+[2] 2018
+[3] 2019
+[4] 2020
+[5] 2021
+[6] 2026
 
 
 chmod a+x script.run
