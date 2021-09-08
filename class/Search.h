@@ -123,7 +123,7 @@ namespace MRBD {
             }
             assignProcess();
             iterations++;
-            bestCosts.push_back(instance_.bestObjectiveCostFull());
+            bestCosts.push_back(instance_.getObjectiveCostFull());
         }
 
         inline void LDS_RRS(){

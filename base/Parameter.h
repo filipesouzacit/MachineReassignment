@@ -85,7 +85,7 @@ namespace MRBD
     }
 
     time_t startTime;
-    int16_t runTime = 300;
+    int32_t runTime = 300;
     int32_t seed = 10;
     Qtt subProblemSizeInit = 4;
     Qtt subProblemSizeMax = 100;

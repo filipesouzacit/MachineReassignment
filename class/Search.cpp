@@ -408,7 +408,7 @@ void Search::LDS(Id parent) {
 void Search::LNSnew() {
     notImprovements = 0;
     subProblemSize = MRBD::subProblemSizeInit;
-    bestCosts.push_back(instance_.bestObjectiveCostFull());
+    bestCosts.push_back(instance_.getObjectiveCostFull());
     while (MRBD::checkTime()) {
         updated_ = 0;
         createSubProblem();
@@ -425,7 +425,7 @@ void Search::LNSnew() {
 void Search::lnsMachineSelection() {
     Qtt notImprovements = 0;
     subProblemSize = MRBD::subProblemSizeInit;
-    bestCosts.push_back(instance_.bestObjectiveCostFull());
+    bestCosts.push_back(instance_.getObjectiveCostFull());
     while (MRBD::checkTime()) {
         updated_ = 0;
         createSubProblem();
