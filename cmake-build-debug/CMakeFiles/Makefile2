@@ -74,6 +74,7 @@ CMAKE_BINARY_DIR = /Users/filipe/CLionProjects/MachineReassignment/cmake-build-d
 
 # The main recursive "all" target.
 all: CMakeFiles/ROAED2012.dir/all
+all: CMakeFiles/chuffed.dir/all
 
 .PHONY : all
 
@@ -83,9 +84,38 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/main.dir/clean
 clean: CMakeFiles/ROAED2012.dir/clean
+clean: CMakeFiles/chuffed.dir/clean
 
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/main.dir
+
+# All Build rule for target.
+CMakeFiles/main.dir/all: CMakeFiles/chuffed.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=54,55 "Built target main"
+.PHONY : CMakeFiles/main.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/main.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles 53
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/main.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/main.dir/rule
+
+# Convenience name for target.
+main: CMakeFiles/main.dir/rule
+
+.PHONY : main
+
+# clean rule for target.
+CMakeFiles/main.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/main.dir/build.make CMakeFiles/main.dir/clean
+.PHONY : CMakeFiles/main.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/ROAED2012.dir
@@ -113,6 +143,33 @@ ROAED2012: CMakeFiles/ROAED2012.dir/rule
 CMakeFiles/ROAED2012.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/clean
 .PHONY : CMakeFiles/ROAED2012.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/chuffed.dir
+
+# All Build rule for target.
+CMakeFiles/chuffed.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chuffed.dir/build.make CMakeFiles/chuffed.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chuffed.dir/build.make CMakeFiles/chuffed.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53 "Built target chuffed"
+.PHONY : CMakeFiles/chuffed.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/chuffed.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles 51
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/chuffed.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles 0
+.PHONY : CMakeFiles/chuffed.dir/rule
+
+# Convenience name for target.
+chuffed: CMakeFiles/chuffed.dir/rule
+
+.PHONY : chuffed
+
+# clean rule for target.
+CMakeFiles/chuffed.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/chuffed.dir/build.make CMakeFiles/chuffed.dir/clean
+.PHONY : CMakeFiles/chuffed.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

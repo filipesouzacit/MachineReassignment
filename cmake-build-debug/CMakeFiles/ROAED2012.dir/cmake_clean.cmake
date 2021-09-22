@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/ROAED2012.dir/main.cpp.o"
+  "CMakeFiles/ROAED2012.dir/main1.cpp.o"
   "ROAED2012"
   "ROAED2012.pdb"
 )

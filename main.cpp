@@ -1,72 +1,145 @@
-#include <iostream>
+#include <cstdio>
+#include <cassert>
+#include <chuffed/core/engine.h>
+#include <chuffed/core/propagator.h>
+#include <chuffed/branching/branching.h>
+#include <chuffed/vars/modelling.h>
+#include <chuffed/ldsb/ldsb.h>
 #include "class/Search.cpp"
 
-int main() {
+class Optimiser : public Problem {
+public:
+	int const n;
+	std::vector<Id> *activService;
 
-    MRBD::testId = "666";
-    Qtt numRuns = 5;
-    MRBD::typeSearch = 2; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
-    MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
-//    MRBD::machineMaxInit = 200;
-//    MRBD::machineMaxSearch = 100;
-    MRBD::subProblemSizeInit = 30;
-    MRBD::subProblemSizeMax  = 30;
-    MRBD::improvementThreshold = 1410065407;
-//    MRBD::pctChangeMachine = 0.2;
-//    MRBD::pctRandom = 0.5;
-    MRBD::runTime = 28800;
-    MRBD::failuresMax = 400;
-    MRBD::fatorFailuresMax = 1.5;
-    MRBD::failuresinitialMax = 10;
-    MRBD::discrepancyMax = 5;
-//    MRBD::iterationToPrint = 0;
-    MRBD::printFreq = 10000;
-    MRBD::topValueSeletion = 1;
-    MRBD::topVariableSeletion = 2;
+	vec<vec<IntVar*> > x;
 
-    MRBD::improvementThresholdOF = 1000;
-    MRBD::thresholdAltObjFunc = 20;
-    MRBD::timeLimitAltObjFunc = 0.999;
-    MRBD::ObjetiveFunctions = {6,7};
+    Optimiser(int _n, std::vector<Id> *activService_) : n(_n), activService(activService_){
 
-    std::vector<std::string> test = {
-                                 "a2_1" //,
-                                 //"a1_2","a1_3","a1_4","a1_5",
-                               //  "a2_1",
-                                // "a2_2","a2_3","a2_4","a2_5",
-                                // "b_1","b_2","b_3","b_4","b_5","b_6","b_7","b_8","b_9","b_10",
-                                // "x_1","x_2","x_3","x_4","x_5","x_6","x_7","x_8",
-                                // "x_9","x_10"
-                                 };
-//                                 "a1_2",
-//                                 "a2_1",
-//                                 "a2_3"
-//                                 ,"b_8",
-//                                 "b_9",
-//                                 "b_10"
-//    };
-    std::string stringpath = "../../result/solution/"+ testId +"/";
-    int status = mkdir(stringpath.c_str(),0777);
-    for (Id s=0;s<numRuns;s++) {
-        std::string ss = std::to_string(s) + ".";
-        for (Id i = 0; i < test.size(); i++) {
-            MRBD::instancePath = "../data/model_";
-            MRBD::inicSolutionPath = "../data/assignment_";
-            MRBD::solutionPath = "../../result/solution/"+ testId +"/solution_";
-            MRBD::dataPlotPath = "../../result/solution/"+ testId +"/dataPlot_";
-            MRBD::treeDataPlotPath = "../../result/solution/"+ testId +"/tree_dataPlot_";
-            MRBD::instancePath.append(test[i]).append(".txt");
-            MRBD::inicSolutionPath.append(test[i]).append(".txt");
-            MRBD::solutionPath.append(ss).append(test[i]).append(".txt");
-            MRBD::dataPlotPath.append(ss).append(test[i]).append(".txt");
-            MRBD::treeDataPlotPath.append(ss).append(test[i]).append(".txt");
-            MRBD::inst = test[i];
-            MRBD::seed = s;
-            MRBD::randNum = std::mt19937(MRBD::seed);
-            MRBD::Search search = MRBD::Search();
-            MRBD::initSolver();
-            search.start();
-        }
-    }
-    return 0;
+		createVars(, n, n, 1, n);
+
+
+
+        std::cout << "Test: " << activService->size() << std::endl;
+
+		vec<vec<IntVar*> > xt;
+		transpose(x, xt);
+
+        //Conflict constraints
+        //constraint forall (s in S) (alldifferent([mapP[p]| p in service[s]]));
+
+		for (int i = 0; i < n; i++) {
+			all_different(x[i]);
+			all_different(xt[i]);
+		}
+
+		for (int d = 1; d < 2*n-2; d++) {
+			vec<IntVar*> t;
+			for (int i = 0; i < n; i++) {
+				if (d-i < 0 || d-i >= n) continue;
+				t.push(x[i][d-i]);
+			}
+			all_different(t);
+		}
+
+		for (int d = -(n-2); d <= n-2; d++) {
+			vec<IntVar*> t;
+			for (int i = 0; i < n; i++) {
+				if (i-d < 0 || i-d >= n) continue;
+				t.push(x[i][i-d]);
+			}
+			all_different(t);
+		}
+
+		vec<IntVar*> s;
+		flatten(x, s);
+
+//		branch(s, VAR_INORDER, VAL_MIN);
+		branch(s, VAR_SIZE_MIN, VAL_MIN);
+
+		output_vars(s);
+
+		if (so.ldsb) {
+			val_sym_ldsb(s, 1, n);
+
+			// horizontal flip 
+			vec<IntVar*> sym1;
+
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n/2; j++) {
+					sym1.push(x[i][j]);
+				}
+			}
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < n/2; j++) {
+					sym1.push(x[i][n-j-1]);
+				}
+			}
+
+			var_seq_sym_ldsb(2, n*(n/2), sym1);
+
+			// diagonal sym
+			vec<IntVar*> sym2;
+
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < i; j++) {
+					sym2.push(x[i][j]);
+				}
+			}
+			for (int i = 0; i < n; i++) {
+				for (int j = 0; j < i; j++) {
+					sym2.push(x[j][i]);
+				}
+			}
+
+			var_seq_sym_ldsb(2, n*(n-1)/2, sym2);
+
+		} else if (so.sym_static) {
+
+			for (int i = 0; i < n; i++) {
+				int_rel(x[0][i], IRT_EQ, i+1);
+			}
+
+		}
+
+	}
+
+	void restrict_learnable() {
+		printf("Setting learnable white list\n");
+		for (int i = 0; i < sat.nVars(); i++) sat.flags[i] = 0;
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				assert(x[i][j]->getType() == INT_VAR_EL);
+				((IntVarEL*) x[i][j])->setVLearnable();
+				((IntVarEL*) x[i][j])->setVDecidable(true);
+			}
+		}
+	}
+
+  void print(std::ostream& os) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
+				os << x[i][j]->getVal() << ", ";
+			}
+			os << "\n";
+		}
+		os << "\n";
+	}
+
+};
+
+int main(int argc, char** argv) {
+//	parseOptions(argc, argv);
+
+	int n;
+    std::vector<Id> activService = {1,2,3,4,5};
+//	assert(argc == 2);
+	n = 7; //atoi(argv[1]);
+
+	engine.solve(new Optimiser(n, &activService));
+
+	return 0;
 }
+
+
+

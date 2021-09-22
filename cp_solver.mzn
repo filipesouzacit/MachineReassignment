@@ -25,7 +25,8 @@ array[1..3] of int:machine;
 array[1..4] of int:neighbourhood; 
 array[1..3] of int:PMC;
 array[1..2] of set of int:service; 
-array[1..2] of set of int:depends; 
+array[1..2] of set of int:depends;
+
 array[1..4,1..2] of int:capacity;
 array[1..4,1..2] of int:scapacity;
 array[1..5,1..2] of int:capacityTransient;
@@ -42,7 +43,8 @@ array[1..numP] of var 1..numM:mapP;
 %Dependency constraints
 constraint forall (s in S where card(depends[s])>0) 
           (forall (d in depends[s])
-          (forall (p in service[s]) ((count_lt([neighbourhood[mapP[p1]]| p1 in service[d]],neighbourhood[mapP[p]],0)))));
+          (forall (p in service[s])
+          ((count_lt([neighbourhood[mapP[p1]]| p1 in service[d]],neighbourhood[mapP[p]],0)))));
 
 %(among(card(service[s]),[neighbourhood[mapP[p]]| p in service[s]], {})));
 %Spread constraints

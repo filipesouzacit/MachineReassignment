@@ -1,0 +1,1926 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="chuffed"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 install"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="examples">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 examples"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nurse">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/nurse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 nurse"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nurse/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/nurse" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 nurse/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdpent">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/fdpent" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdpent"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fdpent/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/fdpent" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 fdpent/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cross">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/cross" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 cross"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cross/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/cross" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 cross/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="steel_mill">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/steel_mill" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 steel_mill"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="steel_mill/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/steel_mill" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 steel_mill/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shift">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/shift" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 shift"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="shift/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/shift" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 shift/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rcpsp">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/rcpsp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 rcpsp"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rcpsp/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/rcpsp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 rcpsp/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/strip">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/strip"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nn_queens">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/nn_queens" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 nn_queens"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="nn_queens/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/nn_queens" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 nn_queens/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="magic_square">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/magic_square" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 magic_square"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="magic_square/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/magic_square" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 magic_square/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="latin_square">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/latin_square" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 latin_square"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="latin_square/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/latin_square" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 latin_square/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="grid_colouring">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/grid_colouring" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 grid_colouring"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="grid_colouring/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/grid_colouring" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 grid_colouring/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mosp">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/mosp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 mosp"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="mosp/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/mosp" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 mosp/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bibd">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/bibd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 bibd"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="bibd/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/bibd" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 bibd/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring_sym">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring_sym" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring_sym"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring_sym/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring_sym" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring_sym/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wreg_shift">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/wreg_shift" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 wreg_shift"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="wreg_shift/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/wreg_shift" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 wreg_shift/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graceful_graph">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graceful_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graceful_graph"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graceful_graph/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graceful_graph" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graceful_graph/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="queens">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/queens" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 queens"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="queens/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/queens" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 queens/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chuffed_fzn">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed_fzn.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed_fzn"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chuffed_fzn/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed_fzn.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed_fzn/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="list_install_components">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 list_install_components"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="golomb">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/golomb" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 golomb"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="golomb/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/golomb" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 golomb/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blackhole">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/blackhole" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 blackhole"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="blackhole/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/blackhole" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 blackhole/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fzn-chuffed">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/fzn-chuffed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 fzn-chuffed"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="fzn-chuffed/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/fzn-chuffed" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 fzn-chuffed/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="concert_hall">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/concert_hall" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 concert_hall"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="concert_hall/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/concert_hall" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 concert_hall/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chuffed">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chuffed/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ROAED2012">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/ROAED2012" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 ROAED2012"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="ROAED2012/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/ROAED2012" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 ROAED2012/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="photo">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/photo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 photo"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="photo/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/photo" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 photo/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="non">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/non" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 non"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="non/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/non" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 non/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="install/local">
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 install/local"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="concert_hall_sym">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/concert_hall_sym" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 concert_hall_sym"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="concert_hall_sym/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/concert_hall_sym" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 concert_hall_sym/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring_sym2">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring_sym2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring_sym2"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="graph_colouring_sym2/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/graph_colouring_sym2" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/chuffed"/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 graph_colouring_sym2/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/branching/branching.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/branching/branching.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/conflict.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/engine.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/engine.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/init.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/options.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/options.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/propagator.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat-types.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/stats.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/bibd.cpp">
+			<Option target="bibd"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/blackhole.cpp">
+			<Option target="blackhole"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/concert_hall.cpp">
+			<Option target="concert_hall"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/concert_hall_sym.cpp">
+			<Option target="concert_hall_sym"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/cross.cpp">
+			<Option target="cross"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/fdpent.cpp">
+			<Option target="fdpent"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/golomb.cpp">
+			<Option target="golomb"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/graceful_graph.cpp">
+			<Option target="graceful_graph"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/graph_colouring.cpp">
+			<Option target="graph_colouring"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/graph_colouring_sym.cpp">
+			<Option target="graph_colouring_sym"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/graph_colouring_sym2.cpp">
+			<Option target="graph_colouring_sym2"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/grid_colouring.cpp">
+			<Option target="grid_colouring"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/latin_square.cpp">
+			<Option target="latin_square"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/magic_square.cpp">
+			<Option target="magic_square"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/mosp.cpp">
+			<Option target="mosp"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/nn_queens.cpp">
+			<Option target="nn_queens"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/non.cpp">
+			<Option target="non"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/nurse.cpp">
+			<Option target="nurse"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/photo.cpp">
+			<Option target="photo"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/queens.cpp">
+			<Option target="queens"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/rcpsp.cpp">
+			<Option target="rcpsp"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/shift.cpp">
+			<Option target="shift"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/steel_mill.cpp">
+			<Option target="steel_mill"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/examples/wreg_shift.cpp">
+			<Option target="wreg_shift"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/flatzinc/ast.h">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/flatzinc/flatzinc.cpp">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/flatzinc/flatzinc.h">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/flatzinc/fzn-chuffed.cpp">
+			<Option target="fzn-chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/flatzinc/registry.cpp">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/alldiff.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/bool_arg_max.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/circuit.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/cumulative.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/cumulativeCalendar.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/directives.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/disjunctive.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/globals.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/lex.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/linear-bool-decomp.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/linear-bool.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/mddglobals.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/mddglobals.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/minimum.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/regular.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/subcircuit.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/sym-break.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/table.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/template.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/well-founded.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/ldsb/ldsb.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/ldsb/ldsb.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/CFG.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/CYK.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MDD.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MDD.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MurmurHash3.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MurmurHash3.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/circ_fns.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/circutil.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_prop.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_prop.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_to_lgraph.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_to_lgraph.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opcache.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opcache.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opts.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/sorters.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/weighted_dfa.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/weighted_dfa.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/wmdd_prop.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/wmdd_prop.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/mip.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/mip.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/recalc.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/simplex.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/simplex.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/master.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/parallel.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/slave.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/arithmetic.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/binary.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/bool.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/domain.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/element.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/linear.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/primitives.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/BVec.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/ParseUtils.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/heap.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/misc.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/sparse_set.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/vec.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/bool-view.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/bool-view.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-el.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-el.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-ll.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-ll.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-sl.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-sl.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-view.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/modelling.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/modelling.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/vars.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/chuffed/flatzinc/parser.tab.h">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/lexer.yy.cpp">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/lexer.yy.cpp.rule">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/parser.tab.cpp">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/parser.tab.cpp.rule">
+			<Option target="chuffed_fzn"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/main.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/main1.cpp">
+			<Option target="ROAED2012"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed.msc.in">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

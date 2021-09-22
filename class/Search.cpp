@@ -11,7 +11,25 @@ Search::Search()
     ObjetiveFunctions = MRBD::ObjetiveFunctions;
     std::cout << "Test: " << MRBD::testId << " Seed: " << MRBD::seed <<  " Instance: " << MRBD::inst <<
     " - Init Cost: " << ((instance_).*(instance_.getObjectiveCost))() << std::endl;
+    switch (MRBD::AdaptSubProblemSize) {
+        case 0:
+            updateSubProblemSize = &Search::updateSubProblemSizeAdapt;
+            MRBD::subProblemSizeInit = 5;
+            MRBD::subProblemSizeMax = 100;
+            break;
+        default:
+            updateSubProblemSize = &Search::updateSubProblemSizePlusOne;
+            break;
+    }
     subProblemSizeMax = MRBD::subProblemSizeMax > instance_.qttProcesses() ? instance_.qttProcesses(): MRBD::subProblemSizeMax;
+    switch (MRBD::AdaptNumMachine) {
+        case 0:
+            getNumMachine = &Search::getNumMachineAdapt;
+            break;
+        default:
+            getNumMachine = &Search::getNumMachinePlusOne;
+            break;
+    }
     machineIndices.reserve(instance_.qttMachines()+1);
     machineIndices2.reserve(instance_.qttMachines()+1);
     machineCosts.reserve(instance_.qttMachines()+1);
@@ -25,16 +43,24 @@ Search::Search()
         machineIndices2.push_back(i);
         machineCosts.push_back(cm);
     }
-    usedMachines.reserve(subProblemSizeMax);
-    costMachine.reserve(subProblemSizeMax);
-    LNS_.reserve(subProblemSizeMax);
-    unassignedProcesses.reserve(subProblemSizeMax);
-    for(Id i=0; i<subProblemSizeMax; i++){
+    usedMachines.reserve(subProblemSizeMax+1);
+    costMachine.reserve(subProblemSizeMax+1);
+    LNS_.reserve(subProblemSizeMax+1);
+    unassignedProcesses.reserve(subProblemSizeMax+1);
+    for(Id i=0; i<subProblemSizeMax+1; i++){
         costMachine.push_back(machineCosts);
     }
     mapId.reserve(instance_.qttProcesses());
     for(Id i=0;i<instance_.qttProcesses();i++){
         mapId.push_back(-1);
+    }
+    for(Id i=0;i<MRBD::maxNumMachine;i++){
+        successItera.push_back(0);
+        totalItera.push_back(1);
+    }
+    for(Id i=0;i<subProblemSizes.size();i++){
+        successSize.push_back(0);
+        totalSize.push_back(1);
     }
 }
 
@@ -141,16 +167,12 @@ void Search::createDomain(){
 }
 
 void Search::createSubProblemRandom(){
-    Id j,p,m;
-    Machine *machine;
+    Id p;
     while(unassignedProcessQtt < subProblemSize){
-        m = randNum()%instance_.qttMachines();
-        while(instance_.machine(m)->n == 0){
-            m = randNum()%instance_.qttMachines();
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
         }
-        machine = instance_.machine(m);
-        j = randNum()%machine->n;
-        p = machine->processes[j].idProcess;
         setUnassigned(p);
         instance_.unassignProcess(p);
     }
@@ -203,11 +225,7 @@ void Search::createSubProblemProcessMaxCost(){
 
 void Search::createSubProblemUnbalancedMachine(){
     Qtt numProcess = 0;
-    if(numMachine<10){
-        numMachine++;
-    }else{
-        numMachine = 1;
-    }
+    ((this)->*(this->getNumMachine))();
     Id j,p;
     Id m = getMachine();
     Machine *machine = instance_.machine(m);
@@ -218,14 +236,56 @@ void Search::createSubProblemUnbalancedMachine(){
             numProcess = 0;
         }
         if(toGetBestMachine){
-            j = randNum()%machine->n;
-        }else{
             j = machine->n-1;
+            toGetBestMachine = false;
+        }else{
+            j = randNum()%machine->n;
+            toGetBestMachine = true;
         }
         p = machine->processes[j].idProcess;
         setUnassigned(p);
         instance_.unassignProcess(p);
         numProcess++;
+    }
+}
+
+void Search::createSubProblemUnbalancedMachine2(){
+    Qtt numProcess = 0;
+    ((this)->*(this->getNumMachine))();
+    Id j,p,om;
+    Id m = getMachine();
+    Machine *omachine;
+    Machine *machine = instance_.machine(m);
+    while(unassignedProcessQtt < subProblemSize){
+        if((numProcess > (subProblemSize/numMachine)) || machine->n==0){
+            m=getMachine();
+            machine = instance_.machine(m);
+            numProcess = 0;
+        }
+        if(toGetBestMachine){
+            j = machine->n-1;
+            toGetBestMachine = false;
+        }else{
+            j = randNum()%machine->n;
+            toGetBestMachine = true;
+        }
+        p = machine->processes[j].idProcess;
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+        numProcess++;
+        if(unassignedProcessQtt < subProblemSize){
+            om = instance_.process(p)->originalMachineId;
+            if (om != m) {
+                omachine = instance_.machine(om);
+                if (omachine->n > 0){
+                    j = randNum()%omachine->n;
+                    p = omachine->processes[j].idProcess;
+                    setUnassigned(p);
+                    instance_.unassignProcess(p);
+                    numProcess++;
+                }
+            }
+        }
     }
 }
 
@@ -416,7 +476,7 @@ void Search::LNSnew() {
         if((iterations%MRBD::printFreq)==0){
             printBestSolution();
         }
-        updateSubProblemSize();
+        ((this)->*(this->updateSubProblemSize))();
         ObjFuncNoise();
     }
     bestCosts.push_back(instance_.bestObjectiveCostFull());
@@ -430,7 +490,7 @@ void Search::lnsMachineSelection() {
         updated_ = 0;
         createSubProblem();
         optimise();
-        updateSubProblemSize();
+        ((this)->*(this->updateSubProblemSize))();
         ObjFuncNoise();
     }
     bestCosts.push_back(instance_.bestObjectiveCostFull());

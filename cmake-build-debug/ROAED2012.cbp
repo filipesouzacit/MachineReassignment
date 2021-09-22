@@ -17,6 +17,54 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="main">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 main"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="main/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/main" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 main/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="rebuild_cache">
 				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
 				<Option type="4"/>
@@ -44,6 +92,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
@@ -66,6 +116,8 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
@@ -81,8 +133,329 @@
 					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="chuffed">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="chuffed/fast">
+				<Option output="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/libchuffed.a" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="2"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/."/>
+					<Add directory="/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 chuffed/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 		</Build>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/branching/branching.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/branching/branching.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/conflict.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/engine.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/engine.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/init.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/options.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/options.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/propagator.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat-types.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/sat.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/core/stats.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/alldiff.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/bool_arg_max.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/circuit.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/cumulative.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/cumulativeCalendar.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/directives.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/disjunctive.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/globals.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/lex.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/linear-bool-decomp.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/linear-bool.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/mddglobals.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/mddglobals.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/minimum.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/regular.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/subcircuit.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/sym-break.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/table.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/template.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/globals/well-founded.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/ldsb/ldsb.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/ldsb/ldsb.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/CFG.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/CYK.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MDD.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MDD.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MurmurHash3.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/MurmurHash3.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/circ_fns.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/circutil.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_prop.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_prop.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_to_lgraph.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/mdd_to_lgraph.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opcache.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opcache.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/opts.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/sorters.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/weighted_dfa.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/weighted_dfa.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/wmdd_prop.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mdd/wmdd_prop.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/mip.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/mip.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/recalc.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/simplex.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/mip/simplex.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/master.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/parallel.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/parallel/slave.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/arithmetic.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/binary.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/bool.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/domain.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/element.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/linear.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/primitives/primitives.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/BVec.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/ParseUtils.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/heap.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/misc.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/sparse_set.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/support/vec.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/bool-view.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/bool-view.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-el.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-el.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-ll.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-ll.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-sl.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var-sl.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-var.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/int-view.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/modelling.cpp">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/modelling.h">
+			<Option target="chuffed"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/chuffed/vars/vars.h">
+			<Option target="chuffed"/>
+		</Unit>
 		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/main.cpp">
+			<Option target="main"/>
+		</Unit>
+		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/main1.cpp">
 			<Option target="ROAED2012"/>
 		</Unit>
 		<Unit filename="/Users/filipe/CLionProjects/MachineReassignment/CMakeLists.txt">

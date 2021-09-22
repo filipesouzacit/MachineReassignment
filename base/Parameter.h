@@ -102,8 +102,11 @@ namespace MRBD
     Qtt discrepancyMax = 5;
     Qtt machineMaxInit = 200;
     Qtt machineMaxSearch = 100;
+    Qtt maxNumMachine = 10;
     double pctChangeMachine = 0.5;
     double pctRandom = 0.2;
+    Id AdaptSubProblemSize = 0;
+    Id AdaptNumMachine = 0;
     Id iterationToPrint = 0;
     Id typeSearch = 2; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
     Id selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines

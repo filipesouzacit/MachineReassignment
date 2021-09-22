@@ -1,3 +1,5 @@
+/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/main.dir
 /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/edit_cache.dir
 /Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/ROAED2012.dir
+/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles/chuffed.dir

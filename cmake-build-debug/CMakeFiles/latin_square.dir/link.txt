@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -O0 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/latin_square.dir/chuffed/examples/latin_square.cpp.o  -o latin_square  libchuffed_fzn.a libchuffed.a 

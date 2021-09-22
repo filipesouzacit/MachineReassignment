@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -O0 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/nn_queens.dir/chuffed/examples/nn_queens.cpp.o  -o nn_queens  libchuffed_fzn.a libchuffed.a 

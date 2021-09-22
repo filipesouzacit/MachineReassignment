@@ -1,0 +1,1 @@
+/Library/Developer/CommandLineTools/usr/bin/c++   -O0 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/nurse.dir/chuffed/examples/nurse.cpp.o  -o nurse  libchuffed_fzn.a libchuffed.a /usr/lib/libz.dylib 

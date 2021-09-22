@@ -77,27 +77,27 @@ include CMakeFiles/ROAED2012.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/ROAED2012.dir/flags.make
 
-CMakeFiles/ROAED2012.dir/main.cpp.o: CMakeFiles/ROAED2012.dir/flags.make
-CMakeFiles/ROAED2012.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ROAED2012.dir/main.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ROAED2012.dir/main.cpp.o -c /Users/filipe/CLionProjects/MachineReassignment/main.cpp
+CMakeFiles/ROAED2012.dir/main1.cpp.o: CMakeFiles/ROAED2012.dir/flags.make
+CMakeFiles/ROAED2012.dir/main1.cpp.o: ../main1.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/ROAED2012.dir/main1.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/ROAED2012.dir/main1.cpp.o -c /Users/filipe/CLionProjects/MachineReassignment/main1.cpp
 
-CMakeFiles/ROAED2012.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ROAED2012.dir/main.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/filipe/CLionProjects/MachineReassignment/main.cpp > CMakeFiles/ROAED2012.dir/main.cpp.i
+CMakeFiles/ROAED2012.dir/main1.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ROAED2012.dir/main1.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/filipe/CLionProjects/MachineReassignment/main1.cpp > CMakeFiles/ROAED2012.dir/main1.cpp.i
 
-CMakeFiles/ROAED2012.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ROAED2012.dir/main.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/filipe/CLionProjects/MachineReassignment/main.cpp -o CMakeFiles/ROAED2012.dir/main.cpp.s
+CMakeFiles/ROAED2012.dir/main1.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ROAED2012.dir/main1.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/filipe/CLionProjects/MachineReassignment/main1.cpp -o CMakeFiles/ROAED2012.dir/main1.cpp.s
 
 # Object files for target ROAED2012
 ROAED2012_OBJECTS = \
-"CMakeFiles/ROAED2012.dir/main.cpp.o"
+"CMakeFiles/ROAED2012.dir/main1.cpp.o"
 
 # External object files for target ROAED2012
 ROAED2012_EXTERNAL_OBJECTS =
 
-ROAED2012: CMakeFiles/ROAED2012.dir/main.cpp.o
+ROAED2012: CMakeFiles/ROAED2012.dir/main1.cpp.o
 ROAED2012: CMakeFiles/ROAED2012.dir/build.make
 ROAED2012: CMakeFiles/ROAED2012.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ROAED2012"

@@ -6,5 +6,5 @@ CXX_FLAGS =  -O0 -g   -std=gnu++14
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/Users/filipe/CLionProjects/MachineReassignment/. -I/Users/filipe/CLionProjects/MachineReassignment/cmake-build-debug 
 

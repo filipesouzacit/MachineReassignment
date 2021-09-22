@@ -47,17 +47,20 @@ namespace MRBD {
     class Search {
     public:
         Search();
+        void (Search::*updateSubProblemSize)();
+        void (Search::*getNumMachine)();
         void start();
         void CP(Id parent);
         void LDS(Id parent);
         void RandRestrat(Id parent);
         void lnsMachineSelection();
         void LNSnew();
-        void createSubproblem(Id numMachine);
+//        void createSubproblem(Id numMachine);
         void createSubProblemRandom();
         void createSubProblemMaxCost();
         void createSubProblemProcessMaxCost();
         void createSubProblemUnbalancedMachine();
+        void createSubProblemUnbalancedMachine2();
         void setUnassigned(Id p);
         void createDomain();
         void removeMachinesFromDomain(Id p);
@@ -66,6 +69,38 @@ namespace MRBD {
         Id selectAndRemoveProcess();
         Id selectAndRemoveProcessRandom();
         bool consistent(Id p, Id m);
+        inline void getNumMachinePlusOne(){
+            if(numMachine<10){
+                numMachine++;
+            }else{
+                numMachine = 1;}
+        }
+        inline void getNumMachineAdapt(){
+            Qtt success = successItera[0] < 10? 10 : successItera[0];
+            double successRat = success/(totalItera[0]*1.0);
+            numMachine =1;
+            for (Id i=1;i<MRBD::maxNumMachine;i++){
+                success = successItera[i] < 10? 10 : successItera[i];
+                if (success/(totalItera[i]*1.0) > successRat) {
+                    numMachine = i+1;
+                    successRat = success/(totalItera[i]*1.0);
+                }
+            }
+        }
+        inline Id getSubProblemSize(){
+            Qtt success = successSize[0] < 10? 10 : successSize[0];
+            double successRat = success/(totalSize[0]*1.0);
+            subProblemId=0;
+            for (Id i=1;i<subProblemSizes.size();i++){
+                success = successSize[i] < 10? 10 : successSize[i];
+                if (success/(totalSize[i]*1.0) > successRat) {
+                    subProblemId = i;
+                    successRat = success/(totalSize[i]*1.0);
+                }
+            }
+            return subProblemSizes[subProblemId];
+        }
+
         inline void mapIdsForLNS(){
             for (Id i=0; i < unassignedProcessQtt; i++)
                 mapId[LNS_[i].idProcess] = i;
@@ -73,7 +108,8 @@ namespace MRBD {
         inline void printBestSolution(){
             std::cout << "iteration: " << iterations
                       << " best Cost: " << instance_.bestObjectiveCostFull()
-                      << " size: "<< subProblemSize << std::endl;
+                      << " size: "<< subProblemSize
+                      << " numMachine: "<< numMachine << std::endl;
         }
         inline bool terminateLDS(Qtt D, Id pid){
             return (LNS_[pid].dsize+LNS_[pid].dRemoved-LNS_[pid].dUnSAT) > 0 && MRBD::checkTime()
@@ -150,8 +186,10 @@ namespace MRBD {
                 createSubProblemMaxCost();
             }else if (MRBD::selectProcesses == 3){
                 createSubProblemProcessMaxCost();
-            } else {
+            } else if (MRBD::selectProcesses == 4){
                 createSubProblemUnbalancedMachine();
+            } else {
+                createSubProblemUnbalancedMachine2();
             }
             mapIdsForLNS();
             createDomain();
@@ -339,11 +377,29 @@ namespace MRBD {
             fileOut.close();
         }
 
-        inline void updateSubProblemSize(){
+        inline void updateSubProblemSizeAdapt(){
+            totalItera[numMachine-1]++;
+            totalSize[subProblemId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
+     //           printBestSolution();
+                qttObjetiveFunctionNotImp = 0;
+                isImprov = true;
+                successItera[numMachine-1]++;
+                successSize[subProblemId]++;
+            }else{
+                qttObjetiveFunctionNotImp++;
+            }
+            subProblemSize = getSubProblemSize();
+        }
+
+        inline void updateSubProblemSizePlusOne(){
+            totalItera[numMachine-1]++;
+            if (oldObjectiveCost > instance_.bestObjectiveCost()) {
+    //            printBestSolution();
                 notImprovements = 0;
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
+                successItera[numMachine-1]++;
                 subProblemSize = MRBD::subProblemSizeInit;
             }else{
                 notImprovements++;
@@ -464,13 +520,17 @@ namespace MRBD {
             if (toGetBestMachine){
                 machineIndicesSize--;
                 mIndex_ = machineIndicesSize;
-                toGetBestMachine = false;
                 m = machineIndices[mIndex_];
-                instance_.sortProcessMaxBenefit(m);
+                if (instance_.machine(m)->totalCost > 0){
+                    instance_.sortProcessMaxBenefit(m);
+                }else{
+                    machineIndicesSize=0;
+                    toGetBestMachine = false;
+                }
             }else{
                 mIndex_ = randNum()%machineIndices.size();
-                toGetBestMachine = true;
                 m = machineIndices[mIndex_];
+                instance_.sortProcessMaxBenefit(m);
             }
 
             while(instance_.machine(m)->n == 0){
@@ -485,6 +545,11 @@ namespace MRBD {
         std::vector<TreeSearch> ts_;
         std::vector<CpData> cpData_;
         std::vector<Id> mapId;
+        std::vector<Qtt> totalItera;
+        std::vector<Qtt> successItera;
+        std::vector<Qtt> totalSize;
+        std::vector<Qtt> successSize;
+        std::vector<Qtt> subProblemSizes = {5,10,20,30,40,50,60,70,80,90,100};
         std::vector<Id> machineIndices;
         std::vector<Id> machineIndices2;
         std::vector<std::vector<CostMachine>> costMachine;
@@ -504,6 +569,7 @@ namespace MRBD {
         Qtt unassignedProcessQtt = 0;
         Qtt currentUnassignedProcessQtt = 0;
         Qtt subProblemSize = 0;
+        Id subProblemId = 0;
         Qtt subProblemSizeMax = 0;
         Qtt failuresQtt = 0;
         Qtt maxFailures = 0;

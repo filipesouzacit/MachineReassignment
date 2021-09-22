@@ -60,7 +60,12 @@ int main(int argc, char** argv){
             MRBD::timeLimitAltObjFunc = (double) std::stod(param.value);
         else if(param.name=="ObjetiveFunctions")
             MRBD::ObjetiveFunctions = MRBD::getArray(param.value);
-
+        else if(param.name=="maxNumMachine")
+            MRBD::maxNumMachine = (Qtt) std::stol(param.value);
+        else if(param.name=="AdaptSubProblemSize")
+            MRBD::AdaptSubProblemSize = (Id) std::stol(param.value);
+        else if(param.name=="AdaptNumMachine")
+            MRBD::AdaptNumMachine = (Id) std::stol(param.value);
     }
     cout << MRBD::improvementThresholdOF << "!-!"
             << MRBD::thresholdAltObjFunc << "!-!"
