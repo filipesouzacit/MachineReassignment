@@ -105,7 +105,7 @@ namespace MRBD
     Qtt maxNumMachine = 10;
     double pctChangeMachine = 0.5;
     double pctRandom = 0.2;
-    Id AdaptSubProblemSize = 0;
+    Id AdaptSubProblemSize = 1;
     Id AdaptNumMachine = 0;
     Id iterationToPrint = 0;
     Id typeSearch = 2; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;

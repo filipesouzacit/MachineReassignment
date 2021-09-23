@@ -14,7 +14,7 @@ Search::Search()
     switch (MRBD::AdaptSubProblemSize) {
         case 0:
             updateSubProblemSize = &Search::updateSubProblemSizeAdapt;
-            MRBD::subProblemSizeInit = 5;
+            MRBD::subProblemSizeInit = 10;
             MRBD::subProblemSizeMax = 100;
             break;
         default:
@@ -31,6 +31,7 @@ Search::Search()
             break;
     }
     machineIndices.reserve(instance_.qttMachines()+1);
+    machineIndices1.reserve(instance_.qttMachines()+1);
     machineIndices2.reserve(instance_.qttMachines()+1);
     machineCosts.reserve(instance_.qttMachines()+1);
     CostMachine cm;
@@ -40,6 +41,7 @@ Search::Search()
     cm.itera   = -1;
     for(Id i=0;i<instance_.qttMachines();i++){
         machineIndices.push_back(i);
+        machineIndices1.push_back(i);
         machineIndices2.push_back(i);
         machineCosts.push_back(cm);
     }
@@ -286,6 +288,48 @@ void Search::createSubProblemUnbalancedMachine2(){
                 }
             }
         }
+    }
+}
+
+void Search::createSubProblemUnbalancedMachine3(){
+    Qtt numProcess = 0;
+    ((this)->*(this->getNumMachine))();
+    Id j,p,om;
+    firstSort = true;
+    toGetBestMachine = true;
+    Id m = getMachine2();
+    Machine *omachine;
+    Machine *machine = instance_.machine(m);
+    while(unassignedProcessQtt < subProblemSize){
+        if((numProcess > (subProblemSize/numMachine)) || machine->n==0){
+            firstSort = firstSort?false:true;
+            m=getMachine2();
+            machine = instance_.machine(m);
+            numProcess = 0;
+        }
+        if(toGetBestMachine){
+            j = machine->n-1;
+        }else{
+            j = randNum()%machine->n;
+        }
+        p = machine->processes[j].idProcess;
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+        numProcess++;
+        if(unassignedProcessQtt < subProblemSize){
+            om = instance_.process(p)->originalMachineId;
+            if (om != m) {
+                omachine = instance_.machine(om);
+                if (omachine->n > 0){
+                    j = randNum()%omachine->n;
+                    p = omachine->processes[j].idProcess;
+                    setUnassigned(p);
+                    instance_.unassignProcess(p);
+                    numProcess++;
+                }
+            }
+        }
+        toGetBestMachine = toGetBestMachine?false:true;
     }
 }
 

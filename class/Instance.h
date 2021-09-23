@@ -569,6 +569,10 @@ namespace MRBD
             return ( machines_[m1].totalCost)
                    < (machines_[m2].totalCost);
         }
+        inline bool compare1(Id m1,Id m2){
+            return ( machines_[m1].loadAvaliableCost)
+                   > (machines_[m2].loadAvaliableCost);
+        }
         inline bool compare2(Id m1, Id m2){
             if (machines_[m1].countAvaliable < machines_[m2].countAvaliable){
                 return false;

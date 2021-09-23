@@ -61,6 +61,7 @@ namespace MRBD {
         void createSubProblemProcessMaxCost();
         void createSubProblemUnbalancedMachine();
         void createSubProblemUnbalancedMachine2();
+        void createSubProblemUnbalancedMachine3();
         void setUnassigned(Id p);
         void createDomain();
         void removeMachinesFromDomain(Id p);
@@ -179,7 +180,6 @@ namespace MRBD {
             unassignedProcesses = {};
             LNS_ = {};
             unassignedProcessQtt = 0;
-
             if (MRBD::selectProcesses == 1) {
                 createSubProblemRandom();
             } else if (MRBD::selectProcesses == 2) {
@@ -188,8 +188,10 @@ namespace MRBD {
                 createSubProblemProcessMaxCost();
             } else if (MRBD::selectProcesses == 4){
                 createSubProblemUnbalancedMachine();
-            } else {
+            } else if (MRBD::selectProcesses == 5){
                 createSubProblemUnbalancedMachine2();
+            } else {
+                createSubProblemUnbalancedMachine3();
             }
             mapIdsForLNS();
             createDomain();
@@ -381,7 +383,7 @@ namespace MRBD {
             totalItera[numMachine-1]++;
             totalSize[subProblemId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-     //           printBestSolution();
+              //  printBestSolution();
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
                 successItera[numMachine-1]++;
@@ -395,7 +397,7 @@ namespace MRBD {
         inline void updateSubProblemSizePlusOne(){
             totalItera[numMachine-1]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-    //            printBestSolution();
+              //  printBestSolution();
                 notImprovements = 0;
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
@@ -538,6 +540,39 @@ namespace MRBD {
             }
             return m;
         }
+        Id getMachine2(){
+            Id m;
+            Id mIndex_;
+            if ((machineIndicesSize<0) or (machineIndicesSize1<0) or isImprov or (instance_.machine(machineIndices[machineIndicesSize])->totalCost == 0)) {
+                instance_.loadAvaliableMachine();
+                isImprov = false;
+                machineIndicesSize = machineIndices.size() - 1;
+                machineIndicesSize1 = machineIndices.size() - 1;
+                sort(machineIndices.begin(), machineIndices.end(),
+                     [this](Id m1, Id m2) { return instance_.compare(m1, m2); });
+    //            sort(machineIndices1.begin(), machineIndices1.end(),
+    //                 [this](Id m1, Id m2) { return instance_.compare1(m1, m2); });
+            }
+            if(firstSort) {
+                mIndex_ = machineIndicesSize;
+                m = machineIndices[mIndex_];
+                machineIndicesSize--;
+            }else{
+ //               if ((MRBD::dis(MRBD::randNum) > MRBD::pctChangeMachine)){
+ //                   mIndex_ = machineIndicesSize1;
+ //                   m = machineIndices1[mIndex_];
+//                    machineIndicesSize1--;
+//                }else{
+                    mIndex_ = randNum()%machineIndices.size();
+                    m = machineIndices[mIndex_];
+ //               }
+            }
+            while(instance_.machine(m)->n == 0){
+                m = getMachine2();
+            }
+            instance_.sortProcessMaxBenefit(m);
+            return m;
+        }
 
     private:
         Instance instance_;
@@ -549,8 +584,9 @@ namespace MRBD {
         std::vector<Qtt> successItera;
         std::vector<Qtt> totalSize;
         std::vector<Qtt> successSize;
-        std::vector<Qtt> subProblemSizes = {5,10,20,30,40,50,60,70,80,90,100};
+        std::vector<Qtt> subProblemSizes = {10,20,30,40,50,60,70,80,90,100};
         std::vector<Id> machineIndices;
+        std::vector<Id> machineIndices1;
         std::vector<Id> machineIndices2;
         std::vector<std::vector<CostMachine>> costMachine;
         std::vector<std::vector<Cost>> bestMachines_;
@@ -566,6 +602,7 @@ namespace MRBD {
         Qtt qttObjetiveFunctionAlt = 0;
         Qtt qttObjetiveFunctionNotImp = 0;
         Qtt machineIndicesSize = 0;
+        Qtt machineIndicesSize1 = 0;
         Qtt unassignedProcessQtt = 0;
         Qtt currentUnassignedProcessQtt = 0;
         Qtt subProblemSize = 0;
