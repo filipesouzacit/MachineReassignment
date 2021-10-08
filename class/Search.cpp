@@ -229,20 +229,18 @@ void Search::createSubProblemUnbalancedMachine(){
     Qtt numProcess = 0;
     ((this)->*(this->getNumMachine))();
     Id j,p;
-    Id m = getMachine();
+    Id m = getMachine1();
     Machine *machine = instance_.machine(m);
     while(unassignedProcessQtt < subProblemSize){
         if((numProcess > (subProblemSize/numMachine)) || machine->n==0){
-            m=getMachine();
+            m=getMachine1();
             machine = instance_.machine(m);
             numProcess = 0;
         }
         if(toGetBestMachine){
-            j = machine->n-1;
-            toGetBestMachine = false;
-        }else{
             j = randNum()%machine->n;
-            toGetBestMachine = true;
+        }else{
+            j = machine->n-1;
         }
         p = machine->processes[j].idProcess;
         setUnassigned(p);

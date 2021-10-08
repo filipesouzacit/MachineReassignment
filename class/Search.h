@@ -383,7 +383,7 @@ namespace MRBD {
             totalItera[numMachine-1]++;
             totalSize[subProblemId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-              //  printBestSolution();
+                printBestSolution();
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
                 successItera[numMachine-1]++;
@@ -397,7 +397,7 @@ namespace MRBD {
         inline void updateSubProblemSizePlusOne(){
             totalItera[numMachine-1]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-              //  printBestSolution();
+                printBestSolution();
                 notImprovements = 0;
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
@@ -533,6 +533,41 @@ namespace MRBD {
                 mIndex_ = randNum()%machineIndices.size();
                 m = machineIndices[mIndex_];
                 instance_.sortProcessMaxBenefit(m);
+            }
+
+            while(instance_.machine(m)->n == 0){
+                m = getMachine();
+            }
+            return m;
+        }
+        Id getMachine1(){
+            if (machineIndicesSize==0 or isImprov){
+                instance_.loadAvaliableMachine();
+                isImprov = false;
+                machineIndicesSize = machineIndices.size();
+                if(firstSort) {
+                    firstSort = false;
+                    sort(machineIndices.begin(), machineIndices.end(),
+                         [this](Id m1, Id m2) { return instance_.compare2(m1, m2); });
+                }else{
+                    firstSort = true;
+                    sort(machineIndices.begin(),machineIndices.end(),
+                         [this] (Id m1, Id m2) {return instance_.compare(m1,m2);});
+                }
+            }
+
+            Id m;
+            Id mIndex_;
+            if (toGetBestMachine){
+                machineIndicesSize--;
+                mIndex_ = machineIndicesSize;
+                toGetBestMachine = false;
+                m = machineIndices[mIndex_];
+                instance_.sortProcessMaxBenefit(m);
+            }else{
+                mIndex_ = randNum()%machineIndices.size();
+                toGetBestMachine = true;
+                m = machineIndices[mIndex_];
             }
 
             while(instance_.machine(m)->n == 0){
