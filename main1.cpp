@@ -6,7 +6,7 @@ int main() {
     MRBD::testId = "666";
     Qtt numRuns = 1;
     MRBD::typeSearch = 3; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
-    MRBD::selectProcesses = 11; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
+    MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
 //    MRBD::machineMaxInit = 200;
 //    MRBD::machineMaxSearch = 100;
     MRBD::subProblemSizeInit = 30;
@@ -20,7 +20,7 @@ int main() {
     MRBD::failuresinitialMax = 10;
 //    MRBD::discrepancyMax = 2;
 //    MRBD::iterationToPrint = 0;
-    MRBD::printFreq = 1;
+    MRBD::printFreq = 1000;
     MRBD::topValueSeletion = 1;
     MRBD::topVariableSeletion = 2;
 

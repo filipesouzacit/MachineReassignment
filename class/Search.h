@@ -418,7 +418,7 @@ namespace MRBD {
             totalItera[numMachine-1]++;
             totalSize[subProblemId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-                printBestSolution();
+//                printBestSolution();
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
                 successItera[numMachine-1]++;
@@ -432,7 +432,7 @@ namespace MRBD {
         inline void updateSubProblemSizePlusOne(){
             totalItera[numMachine-1]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
-                printBestSolution();
+//                printBestSolution();
                 notImprovements = 0;
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
