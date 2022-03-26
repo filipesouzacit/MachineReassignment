@@ -6,19 +6,19 @@ int main() {
     MRBD::testId = "666";
     Qtt numRuns = 1;
     MRBD::typeSearch = 3; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
-    MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
+    MRBD::selectProcesses = 8; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
 //    MRBD::machineMaxInit = 200;
 //    MRBD::machineMaxSearch = 100;
     MRBD::subProblemSizeInit = 30;
     MRBD::subProblemSizeMax  = 30;
     MRBD::improvementThreshold = 9999999;
     MRBD::pctChangeMachine = 1;
-    MRBD::pctRandom = 0.5;
-    MRBD::runTime = 30;
+    MRBD::pctRandom = 0.3;
+    MRBD::runTime = 300;
     MRBD::failuresMax = 400;
     MRBD::fatorFailuresMax = 1.5;
     MRBD::failuresinitialMax = 10;
-//    MRBD::discrepancyMax = 2;
+    MRBD::discrepancyMax = 2;
 //    MRBD::iterationToPrint = 0;
     MRBD::printFreq = 1000;
     MRBD::topValueSeletion = 1;
@@ -30,7 +30,7 @@ int main() {
     MRBD::ObjetiveFunctions = {6,7};
 
     std::vector<std::string> test = {
-                                 "a2_1" //,
+                                 "a2_2" //,
                 //                 "a1_2","a1_3","a1_4","a1_5"//,
                                //  "a2_1",
                                 // "a2_2","a2_3","a2_4","a2_5",

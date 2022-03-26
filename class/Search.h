@@ -174,10 +174,12 @@ namespace MRBD {
             }else if(MRBD::typeSearch == 3){
                 maxFailures = MRBD::failuresinitialMax;
                 Qtt failures_ = maxFailures;
-                while(MRBD::failuresMax > failuresQtt && MRBD::checkTime()){
+                Qtt runs = 0;
+                while((MRBD::failuresMax > failuresQtt) && MRBD::checkTime() && (runs<5)){
                     RandRestrat(parent_);
                     failures_ *= MRBD::fatorFailuresMax;
                     maxFailures += failures_;
+                    runs++;
                 }
             }else{
                 LDS_RRS();
