@@ -3,6 +3,7 @@
 //
 
 #pragma once
+#include <iterator>
 #include <sys/time.h>
 #include <iostream>
 #include <unistd.h>
@@ -65,16 +66,6 @@ namespace MRBD
             intList.push_back((Id) std::stol(tmp));
         }
         return intList;
-    }
-
-    std::string getstring(std::vector<Id> vec){
-        std::ostringstream vts;
-        if (!vec.empty()){
-            std::copy(vec.begin(), vec.end()-1,
-                      std::ostream_iterator<int>(vts, ", "));
-            vts << vec.back();
-        }
-        return vts.str();
     }
 
 
@@ -141,6 +132,16 @@ namespace MRBD
     Id UNASSIGNED_ = (Id)60000;
     Id NONE_ = (Id)60000;
 
+
+    std::string getstring(std::vector<Id> vec){
+        std::ostringstream vts;
+        if (!vec.empty()){
+            std::copy(vec.begin(), vec.end()-1,
+                      std::ostream_iterator<Id>(vts, ", "));
+            vts << vec.back();
+        }
+        return vts.str();
+    }
 
     double totalTime(){
         return time(0) - startTime;

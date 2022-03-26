@@ -89,7 +89,7 @@ int main(int argc, char** argv){
     MRBD::solutionPath.append(sseed).append(instance).append(".txt");
     MRBD::dataPlotPath.append(sseed).append(instance).append(".txt");
     MRBD::treeDataPlotPath.append(sseed).append(instance).append(".txt");
-    MRBD::neighbourhoodPath.append(ss).append(test[i]).append(".csv");
+    MRBD::neighbourhoodPath.append(sseed).append(instance).append(".csv");
     MRBD::randNum = std::mt19937(MRBD::seed);
     MRBD::Search search = MRBD::Search();
     MRBD::initSolver();
