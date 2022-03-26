@@ -83,11 +83,13 @@ int main(int argc, char** argv){
     MRBD::solutionPath = "../result/solution/"+ MRBD::testId +"/solution_";
     MRBD::dataPlotPath = "../result/solution/"+ MRBD::testId +"/dataPlot_";
     MRBD::treeDataPlotPath = "../result/solution/"+ MRBD::testId +"/tree_dataPlot_";
+    MRBD::neighbourhoodPath = "../../result/solution/"+ MRBD::testId +"/neighbourhood_";
     MRBD::instancePath.append(instance).append(".txt");
     MRBD::inicSolutionPath.append(instance).append(".txt");
     MRBD::solutionPath.append(sseed).append(instance).append(".txt");
     MRBD::dataPlotPath.append(sseed).append(instance).append(".txt");
     MRBD::treeDataPlotPath.append(sseed).append(instance).append(".txt");
+    MRBD::neighbourhoodPath.append(ss).append(test[i]).append(".csv");
     MRBD::randNum = std::mt19937(MRBD::seed);
     MRBD::Search search = MRBD::Search();
     MRBD::initSolver();

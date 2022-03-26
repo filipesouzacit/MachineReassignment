@@ -9,7 +9,10 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -O0")
 # ------------- CP Profiler Integration -------------
 include_directories(".")
 include_directories(${CMAKE_BINARY_DIR})
-
+#include_directories("/usr/local")
+#INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR})
+#INCLUDE_DIRECTORIES("gecode/")
+#FIND_PACKAGE(<gecode> )
 # ------------- Main Chuffed Definition -------------
 
 add_library(chuffed
@@ -104,12 +107,15 @@ add_library(chuffed
         chuffed/core/options.h
         chuffed/core/propagator.h
         ${CHUFFED_PROFILER_SOURCES}
-        )
+        class/SubProblem.cpp class/SubProblem.h)
+
 # ------------- Chuffed Examples -------------
 add_executable(ROAED2012 main1.cpp)
 
 add_executable(main EXCLUDE_FROM_ALL main.cpp)
 target_link_libraries(main chuffed ${CMAKE_THREAD_LIBS_INIT})
+#target_link_libraries(main gecode "/usr/local/lib")
+
 
 
 

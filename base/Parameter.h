@@ -67,6 +67,17 @@ namespace MRBD
         return intList;
     }
 
+    std::string getstring(std::vector<Id> vec){
+        std::ostringstream vts;
+        if (!vec.empty()){
+            std::copy(vec.begin(), vec.end()-1,
+                      std::ostream_iterator<int>(vts, ", "));
+            vts << vec.back();
+        }
+        return vts.str();
+    }
+
+
     Param getParam(std::string line){
         std::vector<std::string> v;
         std::stringstream ss(line);
@@ -118,6 +129,7 @@ namespace MRBD
     std::string solutionPath = "../solution/solution_";
     std::string dataPlotPath = "../solution/dataPlot_";
     std::string treeDataPlotPath = "../solution/tree_dataPlot_";
+    std::string neighbourhoodPath = "../solution/neighbourhood_";
     std::mt19937 randNum;
     std::uniform_real_distribution<double> dis(0.0,1.0);
 

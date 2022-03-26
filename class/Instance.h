@@ -72,6 +72,11 @@ namespace MRBD
         Id lnsMachineId;
         std::vector<Cost> requirements;
         Cost requirement;
+        Cost improv;
+        Qtt changes;
+        Qtt used;
+        Qtt conflict;
+        Cost cost;
         Cost moveCost;
         Cost moveCostProcess; // new
         Cost moveCostMachine; // new
@@ -116,6 +121,11 @@ namespace MRBD
         inline void setBestObjectiveCost(Cost v) {bestObjectiveCost_ = v;}
         inline void setBestMachine(Id p,Id m) {processes_[p].bestMachineId=m;}
         inline void setLnsMachine(Id p,Id m) {processes_[p].lnsMachineId=m;}
+        inline void addImprov(Id p, Cost v) {processes_[p].improv+=v;}
+        inline void addChanges(Id p) {processes_[p].changes+=1;}
+        inline void addUsed(Id p) {processes_[p].used+=1;}
+        inline void addConflict(Id p) {processes_[p].conflict+=1;}
+
         inline bool isAvaliable(Id m, Id p){
             return services_[processes_[p].serviceId].usedMachines[m]==AVAILABLE_;
         }
@@ -300,6 +310,20 @@ namespace MRBD
                  [this] (MachineProcess m1, MachineProcess m2) {return m1.processCost < m2.processCost;});
         }
 
+        inline void updateCostByProcess() {
+            Machine *M;
+            Id p;
+            Cost cost;
+            for (auto m = usedMachines_.begin(); m != usedMachines_.end(); m++) {
+                M = &machines_[*m];
+                for (Id j = 0; j < M->n; j++) {
+                    p = M->processes[j].idProcess;
+                    cost = processRemoveBenefit(*m, p);
+                    processes_[p].cost = cost;
+                }
+            }
+            usedMachines_.clear();
+        }
         inline std::vector<Id> getProcessByCost(Qtt numProcess){
             Machine *M;
             Id p;

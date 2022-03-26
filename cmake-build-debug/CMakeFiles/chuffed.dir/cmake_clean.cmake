@@ -49,6 +49,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/chuffed.dir/chuffed/vars/int-var-sl.cpp.o"
   "CMakeFiles/chuffed.dir/chuffed/vars/int-var.cpp.o"
   "CMakeFiles/chuffed.dir/chuffed/vars/modelling.cpp.o"
+  "CMakeFiles/chuffed.dir/class/SubProblem.cpp.o"
   "libchuffed.a"
   "libchuffed.pdb"
 )

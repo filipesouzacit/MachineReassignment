@@ -80,6 +80,10 @@ void Instance::processAdd(Str str){
     process.serviceId   = (Id) std::stol(line[0]);
     process.moveCost         = (Cost) std::stol(line[resourceQtt_+1]);
     process.requirement = 0;
+    process.improv = 0;
+    process.changes = 0;
+    process.used = 0;
+    process.conflict = 0;
     services_[process.serviceId].processQtt++;
     services_[process.serviceId].unassignedProcess.push_back(process.id);
     services_[process.serviceId].unassignedProcessQtt++;
@@ -224,6 +228,10 @@ Instance::Instance() {
     }
     bestObjectiveCost_ = getObjectiveCostFull();
     bestObjectiveCostFull_ = bestObjectiveCost_;
+    for(Id m=0; m<machineQtt_; m++){
+        usedMachines_.insert(m);
+    }
+    updateCostByProcess();
 }
 
 bool Instance::machineSatisfyRequirementOfProcess(Id m, Id p){

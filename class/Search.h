@@ -31,6 +31,12 @@ namespace MRBD {
         double improv;
     };
 
+    struct neighbourData {
+        std::vector<Id> process;
+        std::vector<Id> changedProcess;
+        Cost improv;
+    };
+
     struct CostMachine{
         Cost cost;
         Cost intCost;
@@ -62,6 +68,11 @@ namespace MRBD {
         void createSubProblemUnbalancedMachine();
         void createSubProblemUnbalancedMachine2();
         void createSubProblemUnbalancedMachine3();
+        void createSubProblemWeightedVariableImprov();
+        void createSubProblemWeightedVariableChange();
+        void createSubProblemWeightedVariableUsed();
+        void createSubProblemWeightedVariableConflictDirect();
+        void createSubProblemWeightedVariableCost();
         void setUnassigned(Id p);
         void createDomain();
         void removeMachinesFromDomain(Id p);
@@ -125,16 +136,29 @@ namespace MRBD {
         inline void assignProcess(){
             Id bestMachineId;
             Id lnsMachineId;
+            neighbourData nD;
+            Cost improv = oldObjectiveCost-instance_.bestObjectiveCost();
             for (Id i = 0; i < unassignedProcessQtt; i++) {
                 bestMachineId = instance_.process(LNS_[i].idProcess)->bestMachineId;
                 lnsMachineId = instance_.process(LNS_[i].idProcess)->lnsMachineId;
+                nD.process.push_back(LNS_[i].idProcess);
                 instance_.assignMachineToProcess(bestMachineId,LNS_[i].idProcess);
                 if (bestMachineId!=lnsMachineId){
                     instance_.setUsedMachine(bestMachineId);
                     instance_.setUsedMachine(lnsMachineId);
                     instance_.setLnsMachine(LNS_[i].idProcess,bestMachineId);
+                    nD.changedProcess.push_back(LNS_[i].idProcess);
+                    if(instance_.process(LNS_[i].idProcess)->improv==0){
+                        changedProcesses.push_back(LNS_[i].idProcess);
+                    }
+                    instance_.addImprov(LNS_[i].idProcess, improv);
+                    instance_.addChanges(LNS_[i].idProcess);
+                    improvement+=improv;
+                    changes+=1;
                 }
             }
+            nD.improv = improv;
+            neighbourData_.push_back(nD);
         }
         inline void optimise(){
             currentUnassignedProcessQtt = unassignedProcessQtt;
@@ -190,9 +214,20 @@ namespace MRBD {
                 createSubProblemUnbalancedMachine();
             } else if (MRBD::selectProcesses == 5){
                 createSubProblemUnbalancedMachine2();
-            } else {
+            } else if (MRBD::selectProcesses == 6){
                 createSubProblemUnbalancedMachine3();
+            }else  if (MRBD::selectProcesses == 7){
+                createSubProblemWeightedVariableImprov();
+            }else  if (MRBD::selectProcesses == 8){
+                createSubProblemWeightedVariableChange();
+            }else  if (MRBD::selectProcesses == 9){
+                createSubProblemWeightedVariableUsed();
+            }else  if (MRBD::selectProcesses == 10){
+                createSubProblemWeightedVariableConflictDirect();
+            }else  if (MRBD::selectProcesses == 11){
+                createSubProblemWeightedVariableCost();
             }
+
             mapIdsForLNS();
             createDomain();
         }
@@ -501,6 +536,22 @@ namespace MRBD {
             fileOut.close();
         }
 
+        void printNeighbourhood(){
+            std::ofstream fileOut{MRBD::neighbourhoodPath};
+            if (!fileOut.good()) {
+                std::cerr << "ERROR - File not found \"" << MRBD::neighbourhoodPath << "\"" << std::endl;
+                return;
+            }
+            fileOut << "neighbourhood;"
+                    << "changes;"
+                    << "improv" << std::endl;
+            for (Id i=0; i < neighbourData_.size(); i++)
+                fileOut << getstring(neighbourData_[i].process)  << ";"
+                        << getstring(neighbourData_[i].changedProcess) << ";"
+                        << neighbourData_[i].improv << std::endl;
+            fileOut.close();
+        }
+
         Id getMachine(){
             if (machineIndicesSize==0 or isImprov){
                 instance_.loadAvaliableMachine();
@@ -614,6 +665,7 @@ namespace MRBD {
         std::vector<LNS> LNS_;
         std::vector<TreeSearch> ts_;
         std::vector<CpData> cpData_;
+        std::vector<neighbourData> neighbourData_ = {};
         std::vector<Id> mapId;
         std::vector<Qtt> totalItera;
         std::vector<Qtt> successItera;
@@ -623,6 +675,7 @@ namespace MRBD {
         std::vector<Id> machineIndices;
         std::vector<Id> machineIndices1;
         std::vector<Id> machineIndices2;
+        std::vector<Id> changedProcesses;
         std::vector<std::vector<CostMachine>> costMachine;
         std::vector<std::vector<Cost>> bestMachines_;
         std::vector<Id> unassignedProcesses;
@@ -657,6 +710,8 @@ namespace MRBD {
         bool firstSort = false;
         bool isImprov = true;
         Qtt qttLoadAvaliable = 0;
+        Cost improvement = 0;
+        Qtt changes = 0;
         Qtt notImprovements = 0;
         Id updated_ = 0;
 

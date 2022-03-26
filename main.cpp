@@ -6,6 +6,9 @@
 #include <chuffed/vars/modelling.h>
 #include <chuffed/ldsb/ldsb.h>
 #include "class/Search.cpp"
+#include <gecode/driver.hh>
+#include <gecode/int.hh>
+#include <gecode/minimodel.hh>
 
 class Optimiser : public Problem {
 public:
@@ -16,9 +19,7 @@ public:
 
     Optimiser(int _n, std::vector<Id> *activService_) : n(_n), activService(activService_){
 
-		createVars(, n, n, 1, n);
-
-
+		createVars(x,n, n, 1, n);
 
         std::cout << "Test: " << activService->size() << std::endl;
 

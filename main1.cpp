@@ -6,15 +6,15 @@ int main() {
     MRBD::testId = "666";
     Qtt numRuns = 1;
     MRBD::typeSearch = 3; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
-    MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
+    MRBD::selectProcesses = 11; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
 //    MRBD::machineMaxInit = 200;
 //    MRBD::machineMaxSearch = 100;
     MRBD::subProblemSizeInit = 30;
     MRBD::subProblemSizeMax  = 30;
     MRBD::improvementThreshold = 9999999;
     MRBD::pctChangeMachine = 1;
-//    MRBD::pctRandom = 0.5;
-    MRBD::runTime = 300;
+    MRBD::pctRandom = 0.5;
+    MRBD::runTime = 30;
     MRBD::failuresMax = 400;
     MRBD::fatorFailuresMax = 1.5;
     MRBD::failuresinitialMax = 10;
@@ -47,6 +47,7 @@ int main() {
 //    };
     std::string stringpath = "../../result/solution/"+ testId +"/";
     int status = mkdir(stringpath.c_str(),0777);
+
     for (Id s=0;s<numRuns;s++) {
         std::string ss = std::to_string(s) + ".";
         for (Id i = 0; i < test.size(); i++) {
@@ -55,11 +56,13 @@ int main() {
             MRBD::solutionPath = "../../result/solution/"+ testId +"/solution_";
             MRBD::dataPlotPath = "../../result/solution/"+ testId +"/dataPlot_";
             MRBD::treeDataPlotPath = "../../result/solution/"+ testId +"/tree_dataPlot_";
+            MRBD::neighbourhoodPath = "../../result/solution/"+ testId +"/neighbourhood_";
             MRBD::instancePath.append(test[i]).append(".txt");
             MRBD::inicSolutionPath.append(test[i]).append(".txt");
             MRBD::solutionPath.append(ss).append(test[i]).append(".txt");
             MRBD::dataPlotPath.append(ss).append(test[i]).append(".txt");
             MRBD::treeDataPlotPath.append(ss).append(test[i]).append(".txt");
+            MRBD::neighbourhoodPath.append(ss).append(test[i]).append(".csv");
             MRBD::inst = test[i];
             MRBD::seed = s;
             MRBD::randNum = std::mt19937(MRBD::seed);

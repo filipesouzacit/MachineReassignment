@@ -331,6 +331,142 @@ void Search::createSubProblemUnbalancedMachine3(){
     }
 }
 
+void Search::createSubProblemWeightedVariableImprov(){
+    Id p;
+    Qtt numProcesses = subProblemSize*(1-MRBD::pctRandom);
+    if (numProcesses>=changedProcesses.size()){
+        for(Id i=0; i<changedProcesses.size();i++){
+            p = changedProcesses[i];
+            setUnassigned(p);
+            instance_.unassignProcess(p);
+        }
+    }else{
+        Cost w;
+        Cost rImprov = improvement;
+        for(Id i=0; i<numProcesses;i++){
+            w = (randNum()*randNum())%rImprov;
+            Id j=0;
+            while(w>=0) {
+                p = changedProcesses[j];
+                if(instance_.process(p)->currentMachineId!=UNASSIGNED_) {
+                    w-=instance_.process(p)->improv;
+                }
+                j+=1;
+            }
+            rImprov-=instance_.process(p)->improv;
+            setUnassigned(p);
+            instance_.unassignProcess(p);
+        }
+    }
+    while(unassignedProcessQtt < subProblemSize){
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+
+void Search::createSubProblemWeightedVariableChange(){
+    Id p;
+    Qtt numProcesses = subProblemSize*(1-MRBD::pctRandom);
+    if (numProcesses>=changedProcesses.size()){
+        for(Id i=0; i<changedProcesses.size();i++){
+            p = changedProcesses[i];
+            setUnassigned(p);
+            instance_.unassignProcess(p);
+        }
+    }else{
+        Cost w;
+        Cost rChanges = changes;
+        for(Id i=0; i<numProcesses;i++){
+            w = randNum()%rChanges;
+            Id j=0;
+            while(w>=0) {
+                p = changedProcesses[j];
+                if(instance_.process(p)->currentMachineId!=UNASSIGNED_) {
+                    w-=instance_.process(p)->changes;
+                }
+                j+=1;
+            }
+            rChanges-=instance_.process(p)->changes;
+            setUnassigned(p);
+            instance_.unassignProcess(p);
+        }
+    }
+    while(unassignedProcessQtt < subProblemSize){
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+
+void Search::createSubProblemWeightedVariableUsed(){
+    Id p1,p;
+    while(unassignedProcessQtt < subProblemSize){
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
+        }
+        for(Id i=0; i<100;i++){
+            p1 = randNum()%instance_.qttProcesses();
+            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+                p1 = randNum()%instance_.qttProcesses();
+            }
+            if(instance_.process(p)->used>instance_.process(p1)->used){
+                p = p1;
+            }
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+void Search::createSubProblemWeightedVariableConflictDirect(){
+    Id p1,p;
+    while(unassignedProcessQtt < subProblemSize){
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
+        }
+        for(Id i=0; i<100;i++){
+            p1 = randNum()%instance_.qttProcesses();
+            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+                p1 = randNum()%instance_.qttProcesses();
+            }
+            if(instance_.process(p)->conflict<instance_.process(p1)->conflict){
+                p = p1;
+            }
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+void Search::createSubProblemWeightedVariableCost(){
+    Id p1,p;
+    instance_.updateCostByProcess();
+    while(unassignedProcessQtt < subProblemSize){
+        p = randNum()%instance_.qttProcesses();
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            p = randNum()%instance_.qttProcesses();
+        }
+        for(Id i=0; i<100;i++){
+            p1 = randNum()%instance_.qttProcesses();
+            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+                p1 = randNum()%instance_.qttProcesses();
+            }
+            if(instance_.process(p)->cost < instance_.process(p1)->cost){
+                p = p1;
+            }
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+
 Id Search::selectAndRemoveProcess(){
     currentUnassignedProcessQtt--;
     Id bestId = currentUnassignedProcessQtt;
@@ -441,19 +577,23 @@ void Search::RandRestrat(Id parent) {
         pid = mapId[p];
         dsize = LNS_[pid].dsize;
         removeMachinesFromDomain(p);
-        if ((LNS_[pid].dsize - LNS_[pid].dUnSAT) <= 0)
+        if ((LNS_[pid].dsize - LNS_[pid].dUnSAT) <= 0) {
+            instance_.addConflict(p);
             failuresQtt++;
-        else {
+        }else {
             while(terminateRR(pid)){
                 m=selectAndRemoveMachineRandom(p);
+                instance_.addUsed(p);
                 instance_.assignMachineToProcess(m, p);
 //                qttSearch++;
                 if (consistent(p,m)) {
                     usedMachines.push_back(m);
                     RandRestrat(saveNode(parent, p, m));
                     usedMachines.pop_back();
-                } else
+                } else {
+                    instance_.addConflict(p);
                     failuresQtt++;
+                }
                 instance_.unassignProcess(p);
             }
         }
@@ -475,15 +615,17 @@ void Search::LDS(Id parent) {
         pid = mapId[p];
         dsize = LNS_[pid].dsize;
         removeMachinesFromDomain(p);
-        if ((LNS_[pid].dsize - LNS_[pid].dUnSAT) <= 0)
+        if ((LNS_[pid].dsize - LNS_[pid].dUnSAT) <= 0) {
+            instance_.addConflict(p);
             failuresQtt++;
-        else {
+        }else {
             Qtt discrepancy = 0;
             while(terminateLDS(discrepancy, pid)){
                 m=selectAndRemoveMachine(p);
                 if(m==-1){
                     break;
                 }
+                instance_.addUsed(p);
                 instance_.assignMachineToProcess(m, p);
  //               qttSearch++;
                 if (consistent(p, m)) {
@@ -493,8 +635,10 @@ void Search::LDS(Id parent) {
                     discrepancy++;
                     if (currentUnassignedProcessQtt == 0)
                         discrepancy = MRBD::discrepancyMax;
-                } else
+                } else {
+                    instance_.addConflict(p);
                     failuresQtt++;
+                }
                 instance_.unassignProcess(p);
             }
         }
@@ -542,6 +686,7 @@ void Search::start() {
     LNSnew();
     printBestSolution();
     instance_.printSolutionInFile();
+    printNeighbourhood();
     printPlot();
     printCpData();
     if (ts_.size() > 0)

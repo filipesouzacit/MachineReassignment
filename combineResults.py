@@ -6,12 +6,10 @@ Created on Wed May  5 16:45:09 2021
 @author: filipe
 """
 
-import sys
 import glob
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import os
+import sys
 
 bestSolution = pd.read_csv('bestSolution.csv')
 instance = list(bestSolution["instance"].values)

@@ -1,1 +1,0 @@
-/Library/Developer/CommandLineTools/usr/bin/c++   -O0 -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/cross.dir/chuffed/examples/cross.cpp.o  -o cross  libchuffed_fzn.a libchuffed.a /usr/lib/libz.dylib 

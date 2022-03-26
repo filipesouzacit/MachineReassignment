@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/Users/filipe/CLionProjects/MachineReassignment/base/Parameter.h
+/Users/fdesouza/rep/MachineReassignment/base/Parameter.h
 sys/time.h
 -
 iostream
@@ -48,25 +48,25 @@ string
 chrono
 -
 
-/Users/filipe/CLionProjects/MachineReassignment/class/Instance.cpp
+/Users/fdesouza/rep/MachineReassignment/class/Instance.cpp
 Instance.h
-/Users/filipe/CLionProjects/MachineReassignment/class/Instance.h
+/Users/fdesouza/rep/MachineReassignment/class/Instance.h
 
-/Users/filipe/CLionProjects/MachineReassignment/class/Instance.h
+/Users/fdesouza/rep/MachineReassignment/class/Instance.h
 ../base/Parameter.h
-/Users/filipe/CLionProjects/MachineReassignment/base/Parameter.h
+/Users/fdesouza/rep/MachineReassignment/base/Parameter.h
 
-/Users/filipe/CLionProjects/MachineReassignment/class/Search.cpp
+/Users/fdesouza/rep/MachineReassignment/class/Search.cpp
 Search.h
-/Users/filipe/CLionProjects/MachineReassignment/class/Search.h
+/Users/fdesouza/rep/MachineReassignment/class/Search.h
 
-/Users/filipe/CLionProjects/MachineReassignment/class/Search.h
+/Users/fdesouza/rep/MachineReassignment/class/Search.h
 Instance.cpp
-/Users/filipe/CLionProjects/MachineReassignment/class/Instance.cpp
+/Users/fdesouza/rep/MachineReassignment/class/Instance.cpp
 
-/Users/filipe/CLionProjects/MachineReassignment/main1.cpp
+/Users/fdesouza/rep/MachineReassignment/main1.cpp
 iostream
 -
 class/Search.cpp
-/Users/filipe/CLionProjects/MachineReassignment/class/Search.cpp
+/Users/fdesouza/rep/MachineReassignment/class/Search.cpp
 
