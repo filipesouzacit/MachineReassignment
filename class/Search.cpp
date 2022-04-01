@@ -45,6 +45,7 @@ Search::Search()
         machineIndices2.push_back(i);
         machineCosts.push_back(cm);
     }
+    subProblemSizeMax = instance_.qttProcesses(); // remove
     usedMachines.reserve(subProblemSizeMax+1);
     costMachine.reserve(subProblemSizeMax+1);
     LNS_.reserve(subProblemSizeMax+1);
@@ -228,7 +229,7 @@ void Search::createSubProblemProcessMaxCost(){
 void Search::createSubProblemUnbalancedMachine(){
     Qtt numProcess = 0;
     ((this)->*(this->getNumMachine))();
-    Id j,p;
+    Id j,p,s;
     Id m = getMachine1();
     Machine *machine = instance_.machine(m);
     while(unassignedProcessQtt < subProblemSize){
@@ -246,6 +247,17 @@ void Search::createSubProblemUnbalancedMachine(){
         setUnassigned(p);
         instance_.unassignProcess(p);
         numProcess++;
+
+        if(unassignedProcessQtt < subProblemSize){
+            s = instance_.process(p)->serviceId;
+            j = randNum()%instance_.service(s)->processQtt;
+            p = instance_.service(s)->processes[j];
+            if (instance_.process(p)->currentMachineId!=UNASSIGNED_) {
+                    setUnassigned(p);
+                    instance_.unassignProcess(p);
+            }
+        }
+
     }
 }
 
@@ -453,12 +465,67 @@ void Search::createSubProblemWeightedVariableCost(){
         while(instance_.process(p)->currentMachineId==UNASSIGNED_){
             p = randNum()%instance_.qttProcesses();
         }
-        for(Id i=0; i<100;i++){
+        for(Id i=0; i<50;i++){
             p1 = randNum()%instance_.qttProcesses();
             while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
                 p1 = randNum()%instance_.qttProcesses();
             }
             if(instance_.process(p)->cost < instance_.process(p1)->cost){
+                p = p1;
+            }
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+
+void Search::createSubProblemWeightedVariableCostOverUsed(){
+    Id p1,p,j,j1,s,t;
+    instance_.updateCostByProcess();
+    p = randNum()%instance_.qttProcesses();
+    while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+        p = randNum()%instance_.qttProcesses();
+    }
+    for(Id i=0; i<20;i++){
+        p1 = randNum()%instance_.qttProcesses();
+        while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+            p1 = randNum()%instance_.qttProcesses();
+        }
+        if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
+           (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
+            p = p1;
+        }
+    }
+    setUnassigned(p);
+    instance_.unassignProcess(p);
+
+    while(unassignedProcessQtt < subProblemSize){
+        s = instance_.process(p)->serviceId;
+        j = randNum()%instance_.service(s)->processesRelatedQtt;
+        p = instance_.service(s)->processesRelated[j];
+        t = 0;
+        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+            j = randNum()%instance_.service(s)->processesRelatedQtt;
+            p = instance_.service(s)->processesRelated[j];
+            if ((instance_.process(p)->currentMachineId==UNASSIGNED_) and (t>5)){
+                p = randNum()%instance_.qttProcesses();
+            }
+            t++;
+        }
+        for(Id i=0; i<5;i++){
+            j = randNum()%instance_.service(s)->processesRelatedQtt;
+            p1 = instance_.service(s)->processesRelated[j];
+            t = 0;
+            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+                j = randNum()%instance_.service(s)->processesRelatedQtt;
+                p1 = instance_.service(s)->processesRelated[j];
+                if ((instance_.process(p1)->currentMachineId==UNASSIGNED_) and (t>5)){
+                    p1 = randNum()%instance_.qttProcesses();
+                }
+                t++;
+            }
+            if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
+               (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
                 p = p1;
             }
         }
@@ -655,6 +722,8 @@ void Search::LNSnew() {
     notImprovements = 0;
     subProblemSize = MRBD::subProblemSizeInit;
     bestCosts.push_back(instance_.getObjectiveCostFull());
+    createSubProblem1();
+    optimise();
     while (MRBD::checkTime()) {
         updated_ = 0;
         createSubProblem();

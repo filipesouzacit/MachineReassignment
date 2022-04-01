@@ -84,6 +84,7 @@ void Instance::processAdd(Str str){
     process.changes = 0;
     process.used = 0;
     process.conflict = 0;
+    services_[process.serviceId].processes.push_back(process.id);
     services_[process.serviceId].processQtt++;
     services_[process.serviceId].unassignedProcess.push_back(process.id);
     services_[process.serviceId].unassignedProcessQtt++;
@@ -187,6 +188,18 @@ Instance::Instance() {
     for (i = 0; i < processQtt_; i++) {
         getline(itemStream, str);
         processAdd(str);
+    }
+    //Add constraint relationship
+    Id s,d;
+    for (s = 0; s < serviceQtt_; s++) {
+        services_[s].processesRelated.reserve(services_[s].processQtt * (services_[s].dependsOnQtt + 1));
+        services_[s].processesRelated.insert(services_[s].processesRelated.end(),
+                                             services_[s].processes.begin(),services_[s].processes.end());
+        for (d = 0; d < services_[s].dependsOnQtt; d++) {
+            services_[s].processesRelated.insert(services_[s].processesRelated.end(),
+                                                 services_[d].processes.begin(),services_[d].processes.end());
+        }
+        services_[s].processesRelatedQtt = services_[s].processesRelated.size();
     }
 
     // Read Balances

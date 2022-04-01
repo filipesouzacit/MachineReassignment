@@ -73,6 +73,7 @@ namespace MRBD {
         void createSubProblemWeightedVariableUsed();
         void createSubProblemWeightedVariableConflictDirect();
         void createSubProblemWeightedVariableCost();
+        void createSubProblemWeightedVariableCostOverUsed();
         void setUnassigned(Id p);
         void createDomain();
         void removeMachinesFromDomain(Id p);
@@ -228,8 +229,21 @@ namespace MRBD {
                 createSubProblemWeightedVariableConflictDirect();
             }else  if (MRBD::selectProcesses == 11){
                 createSubProblemWeightedVariableCost();
+            }else  if (MRBD::selectProcesses == 12){
+                createSubProblemWeightedVariableCostOverUsed();
             }
 
+            mapIdsForLNS();
+            createDomain();
+        }
+        inline void createSubProblem1() {
+            unassignedProcesses = {};
+            LNS_ = {};
+            unassignedProcessQtt = 0;
+            for (Id i = 0; i < instance_.qttProcesses(); i++){
+                setUnassigned(i);
+                instance_.unassignProcess(i);
+            }
             mapIdsForLNS();
             createDomain();
         }
@@ -624,7 +638,7 @@ namespace MRBD {
             }
 
             while(instance_.machine(m)->n == 0){
-                m = getMachine();
+                m = getMachine1();
             }
             return m;
         }

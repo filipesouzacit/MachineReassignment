@@ -47,6 +47,9 @@ namespace MRBD
         Qtt spreadMin ;
         Qtt processQtt;
         Qtt dependsOnQtt;
+        Qtt processesRelatedQtt;
+        std::vector<Id> processes;
+        std::vector<Id> processesRelated;
         std::vector<Id> dependsOns;
         std::vector<Id> unassignedProcess;
         Qtt unassignedProcessQtt;

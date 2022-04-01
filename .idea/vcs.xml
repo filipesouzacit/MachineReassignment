@@ -2,5 +2,17 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/absl-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/cbc-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/cgl-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/clp-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/coinutils-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/eigen3-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/osi-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/protobuf-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/re2-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/scip-src" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/or-tools/dependencies/_deps/zlib-src" vcs="Git" />
   </component>
 </project>
