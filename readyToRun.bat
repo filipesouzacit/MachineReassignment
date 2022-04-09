@@ -15,6 +15,17 @@ nohup ./script5.run > ../result/data/out210923-S5.log &
 ssh fdesouza@143.239.81.1 -p 40022
 ssh fdesouza@143.239.81.140
 
+g++ -std=c++11 -F/Library/Frameworks -I/usr/local/include  -c ortoolsTest.cpp
+g++ -std=c++11 -F/Library/Frameworks -I/usr/local/include -framework gecode -o ortoolsTest ortoolsTest.cpp
+
+
+g++ -I/usr/local/include -c ortoolsTest.cpp
+g++ -o ortoolsTest  -L/usr/local/lib ortoolsTest.o  -lgecodesearch -lgecodeint -lgecodekernel  -lgecodesupport
+
+LD_LIBRARY_PATH=/usr/local/lib
+echo $LD_LIBRARY_PATH
+export LD_LIBRARY_PATH
+./ortoolsTest
 
 
 filipesouzacit

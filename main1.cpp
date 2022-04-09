@@ -6,7 +6,7 @@ int main() {
     MRBD::testId = "666";
     Qtt numRuns = 1;
     MRBD::typeSearch = 3; // 1 - systematic; 2 - Discrepancy Search; 3 - Random and Restart;
-    MRBD::selectProcesses = 4; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
+    MRBD::selectProcesses = 15; // 1 - Random; 2 - MachineMaxCost ; 3 - ProcessMaxCost; 4 - UnblalancedMachines
 //    MRBD::machineMaxInit = 200;
 //    MRBD::machineMaxSearch = 100;
     MRBD::subProblemSizeInit = 30;

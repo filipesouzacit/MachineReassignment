@@ -55,6 +55,7 @@ namespace MRBD {
         Search();
         void (Search::*updateSubProblemSize)();
         void (Search::*getNumMachine)();
+        Id (Search::*getBestProcess)(Id p , Id p1);
         void start();
         void CP(Id parent);
         void LDS(Id parent);
@@ -74,6 +75,7 @@ namespace MRBD {
         void createSubProblemWeightedVariableConflictDirect();
         void createSubProblemWeightedVariableCost();
         void createSubProblemWeightedVariableCostOverUsed();
+        void createSubProblemWeightedOverUsed();
         void setUnassigned(Id p);
         void createDomain();
         void removeMachinesFromDomain(Id p);
@@ -82,6 +84,77 @@ namespace MRBD {
         Id selectAndRemoveProcess();
         Id selectAndRemoveProcessRandom();
         bool consistent(Id p, Id m);
+        inline Id getRandomProcess(){
+            Id p = randNum()%instance_.qttProcesses();
+            while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+                p = randNum()%instance_.qttProcesses();
+            }
+            return p;
+        }
+        inline Id getRandomProcess(Id s){
+            Id j = randNum()%instance_.service(s)->processesRelatedQtt;
+            Id p = instance_.service(s)->processesRelated[j];
+            Id t = 0;
+            while(instance_.process(p)->currentMachineId==UNASSIGNED_){
+                j = randNum()%instance_.service(s)->processesRelatedQtt;
+                p = instance_.service(s)->processesRelated[j];
+                notFound = false;
+                if ((instance_.process(p)->currentMachineId==UNASSIGNED_) and (t>5)){
+                    p = randNum()%instance_.qttProcesses();
+                    notFound = true;
+                }
+                t++;
+            }
+            return p;
+        }
+        inline Id getRandomProcessRelated(Id s){
+            Id j = randNum()%instance_.service(s)->processesRelatedQtt;
+            Id p1 = instance_.service(s)->processesRelated[j];
+            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
+                j = randNum()%instance_.service(s)->processesRelatedQtt;
+                p1 = instance_.service(s)->processesRelated[j];
+            }
+            return p1;
+        }
+        inline Id getBestProcessBasedOnCost(Id p, Id p1){
+            Id pBest = p;
+            if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
+               (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
+                pBest = p1;
+            }
+            return pBest;
+        }
+        inline Id getBestProcessBasedOnConflictDirect(Id p, Id p1){
+            Id pBest = p;
+            if((instance_.process(p)->conflict/(instance_.process(p)->used+1.0)) <
+               (instance_.process(p1)->conflict/(instance_.process(p1)->used+1.0))){
+                pBest = p1;
+            }
+            return pBest;
+        }
+        inline Id getBestProcessBasedOnUsage(Id p, Id p1){
+            Id pBest = p;
+            if(instance_.process(p)->used>instance_.process(p1)->used){
+                pBest = p1;
+            }
+            return pBest;
+        }
+        inline Id getBestProcessBasedOnChanges(Id p, Id p1){
+            Id pBest = p;
+            if((instance_.process(p)->changes/(instance_.process(p)->used+1.0)) <
+               (instance_.process(p1)->changes/(instance_.process(p1)->used+1.0))){
+                pBest = p1;
+            }
+            return pBest;
+        }
+        inline Id getBestProcessBasedOnImprovement(Id p, Id p1){
+            Id pBest = p;
+            if((instance_.process(p)->improv/(instance_.process(p)->used+1.0)) <
+               (instance_.process(p1)->improv/(instance_.process(p1)->used+1.0))){
+                pBest = p1;
+            }
+            return pBest;
+        }
         inline void getNumMachinePlusOne(){
             if(numMachine<10){
                 numMachine++;
@@ -145,8 +218,10 @@ namespace MRBD {
                 nD.process.push_back(LNS_[i].idProcess);
                 instance_.assignMachineToProcess(bestMachineId,LNS_[i].idProcess);
                 if (bestMachineId!=lnsMachineId){
-                    instance_.setUsedMachine(bestMachineId);
-                    instance_.setUsedMachine(lnsMachineId);
+                   // instance_.setUsedMachine(bestMachineId);
+                   // instance_.setUsedMachine(lnsMachineId);
+                    instance_.setNotUpdatedMachine(bestMachineId);
+                    instance_.setNotUpdatedMachine(lnsMachineId);
                     instance_.setLnsMachine(LNS_[i].idProcess,bestMachineId);
                     nD.changedProcess.push_back(LNS_[i].idProcess);
                     if(instance_.process(LNS_[i].idProcess)->improv==0){
@@ -156,6 +231,7 @@ namespace MRBD {
                     instance_.addChanges(LNS_[i].idProcess);
                     improvement+=improv;
                     changes+=1;
+
                 }
             }
             nD.improv = improv;
@@ -231,8 +307,9 @@ namespace MRBD {
                 createSubProblemWeightedVariableCost();
             }else  if (MRBD::selectProcesses == 12){
                 createSubProblemWeightedVariableCostOverUsed();
+            }else{
+                createSubProblemWeightedOverUsed();
             }
-
             mapIdsForLNS();
             createDomain();
         }
@@ -725,6 +802,7 @@ namespace MRBD {
         bool toGetBestMachine = true;
         bool firstSort = false;
         bool isImprov = true;
+        bool notFound = true;
         Qtt qttLoadAvaliable = 0;
         Cost improvement = 0;
         Qtt changes = 0;

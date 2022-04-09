@@ -30,6 +30,25 @@ Search::Search()
             getNumMachine = &Search::getNumMachinePlusOne;
             break;
     }
+
+    switch (MRBD::selectProcesses) {
+        case 13:
+            getBestProcess = &Search::getBestProcessBasedOnImprovement;
+            break;
+        case 14:
+            getBestProcess = &Search::getBestProcessBasedOnChanges;
+            break;
+        case 15:
+            getBestProcess = &Search::getBestProcessBasedOnUsage;
+            break;
+        case 16:
+            getBestProcess = &Search::getBestProcessBasedOnConflictDirect;
+            break;
+        default:
+            break;
+    }
+
+
     machineIndices.reserve(instance_.qttMachines()+1);
     machineIndices1.reserve(instance_.qttMachines()+1);
     machineIndices2.reserve(instance_.qttMachines()+1);
@@ -424,7 +443,7 @@ void Search::createSubProblemWeightedVariableUsed(){
         while(instance_.process(p)->currentMachineId==UNASSIGNED_){
             p = randNum()%instance_.qttProcesses();
         }
-        for(Id i=0; i<100;i++){
+        for(Id i=0; i<10;i++){
             p1 = randNum()%instance_.qttProcesses();
             while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
                 p1 = randNum()%instance_.qttProcesses();
@@ -444,7 +463,7 @@ void Search::createSubProblemWeightedVariableConflictDirect(){
         while(instance_.process(p)->currentMachineId==UNASSIGNED_){
             p = randNum()%instance_.qttProcesses();
         }
-        for(Id i=0; i<100;i++){
+        for(Id i=0; i<10;i++){
             p1 = randNum()%instance_.qttProcesses();
             while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
                 p1 = randNum()%instance_.qttProcesses();
@@ -459,17 +478,18 @@ void Search::createSubProblemWeightedVariableConflictDirect(){
 }
 void Search::createSubProblemWeightedVariableCost(){
     Id p1,p;
-    instance_.updateCostByProcess();
     while(unassignedProcessQtt < subProblemSize){
         p = randNum()%instance_.qttProcesses();
         while(instance_.process(p)->currentMachineId==UNASSIGNED_){
             p = randNum()%instance_.qttProcesses();
         }
-        for(Id i=0; i<50;i++){
+        instance_.updateCostByProcess(p);
+        for(Id i=0; i<10;i++){
             p1 = randNum()%instance_.qttProcesses();
             while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
                 p1 = randNum()%instance_.qttProcesses();
             }
+            instance_.updateCostByProcess(p1);
             if(instance_.process(p)->cost < instance_.process(p1)->cost){
                 p = p1;
             }
@@ -480,59 +500,68 @@ void Search::createSubProblemWeightedVariableCost(){
 }
 
 void Search::createSubProblemWeightedVariableCostOverUsed(){
-    Id p1,p,j,j1,s,t;
-    instance_.updateCostByProcess();
-    p = randNum()%instance_.qttProcesses();
-    while(instance_.process(p)->currentMachineId==UNASSIGNED_){
-        p = randNum()%instance_.qttProcesses();
-    }
-    for(Id i=0; i<20;i++){
-        p1 = randNum()%instance_.qttProcesses();
-        while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
-            p1 = randNum()%instance_.qttProcesses();
-        }
-        if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
-           (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
-            p = p1;
-        }
+    Id p1,p,s;
+    p = getRandomProcess();
+    instance_.updateCostByProcess(p);
+    for(Id i=0; i<10;i++){
+        p1 = getRandomProcess();
+        instance_.updateCostByProcess(p1);
+        p = getBestProcessBasedOnCost(p,p1);
     }
     setUnassigned(p);
     instance_.unassignProcess(p);
 
     while(unassignedProcessQtt < subProblemSize){
         s = instance_.process(p)->serviceId;
-        j = randNum()%instance_.service(s)->processesRelatedQtt;
-        p = instance_.service(s)->processesRelated[j];
-        t = 0;
-        while(instance_.process(p)->currentMachineId==UNASSIGNED_){
-            j = randNum()%instance_.service(s)->processesRelatedQtt;
-            p = instance_.service(s)->processesRelated[j];
-            if ((instance_.process(p)->currentMachineId==UNASSIGNED_) and (t>5)){
-                p = randNum()%instance_.qttProcesses();
+        p = getRandomProcess(s);
+        instance_.updateCostByProcess(p);
+        if(notFound){
+            for(Id i=0; i<10;i++){
+                p1 = getRandomProcess();
+                instance_.updateCostByProcess(p1);
+                p = getBestProcessBasedOnCost(p,p1);
             }
-            t++;
-        }
-        for(Id i=0; i<5;i++){
-            j = randNum()%instance_.service(s)->processesRelatedQtt;
-            p1 = instance_.service(s)->processesRelated[j];
-            t = 0;
-            while(instance_.process(p1)->currentMachineId==UNASSIGNED_){
-                j = randNum()%instance_.service(s)->processesRelatedQtt;
-                p1 = instance_.service(s)->processesRelated[j];
-                if ((instance_.process(p1)->currentMachineId==UNASSIGNED_) and (t>5)){
-                    p1 = randNum()%instance_.qttProcesses();
-                }
-                t++;
-            }
-            if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
-               (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
-                p = p1;
+        }else{
+            for(Id i=0; i<10;i++){
+                p1 = getRandomProcessRelated(s);
+                instance_.updateCostByProcess(p1);
+                p = getBestProcessBasedOnCost(p,p1);
             }
         }
         setUnassigned(p);
         instance_.unassignProcess(p);
     }
 }
+
+void Search::createSubProblemWeightedOverUsed(){
+    Id p1,p,s;
+    p = getRandomProcess();
+    for(Id i=0; i<10;i++){
+        p1 = getRandomProcess();
+        p = ((this)->*(this->getBestProcess))(p,p1);
+    }
+    setUnassigned(p);
+    instance_.unassignProcess(p);
+
+    while(unassignedProcessQtt < subProblemSize){
+        s = instance_.process(p)->serviceId;
+        p = getRandomProcess(s);
+        if(notFound){
+            for(Id i=0; i<10;i++){
+                p1 = getRandomProcess();
+                p = ((this)->*(this->getBestProcess))(p,p1);
+            }
+        }else{
+            for(Id i=0; i<10;i++){
+                p1 = getRandomProcessRelated(s);
+                p = ((this)->*(this->getBestProcess))(p,p1);
+            }
+        }
+        setUnassigned(p);
+        instance_.unassignProcess(p);
+    }
+}
+
 
 Id Search::selectAndRemoveProcess(){
     currentUnassignedProcessQtt--;

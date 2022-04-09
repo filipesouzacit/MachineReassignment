@@ -35,6 +35,7 @@ namespace MRBD
         Cost balanceCostMachine; // new
         Cost totalCost;// new
         Cost wostCostProcess;// new
+        bool notUpdated;
         std::vector<Cost> usages;
         std::vector<Cost> transitiveUsages;
         std::vector<Cost> avaliable;
@@ -124,6 +125,7 @@ namespace MRBD
         inline void setBestObjectiveCost(Cost v) {bestObjectiveCost_ = v;}
         inline void setBestMachine(Id p,Id m) {processes_[p].bestMachineId=m;}
         inline void setLnsMachine(Id p,Id m) {processes_[p].lnsMachineId=m;}
+        inline void setNotUpdatedMachine(Id m) {machines_[m].notUpdated= true;}
         inline void addImprov(Id p, Cost v) {processes_[p].improv+=v;}
         inline void addChanges(Id p) {processes_[p].changes+=1;}
         inline void addUsed(Id p) {processes_[p].used+=1;}
@@ -326,6 +328,20 @@ namespace MRBD
                 }
             }
             usedMachines_.clear();
+        }
+        inline void updateCostByProcess(Id idProcess) {
+            Id m= processes_[idProcess].currentMachineId;
+            Machine *M = &machines_[m];
+            Id p;
+            Cost cost;
+            if(M->notUpdated) {
+                for (Id j = 0; j < M->n; j++) {
+                    p = M->processes[j].idProcess;
+                    cost = processRemoveBenefit(m, p);
+                    processes_[p].cost = cost;
+                }
+                M->notUpdated = false;
+            }
         }
         inline std::vector<Id> getProcessByCost(Qtt numProcess){
             Machine *M;
