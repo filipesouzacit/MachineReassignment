@@ -64,7 +64,6 @@ Search::Search()
         machineIndices2.push_back(i);
         machineCosts.push_back(cm);
     }
-    subProblemSizeMax = instance_.qttProcesses(); // remove
     usedMachines.reserve(subProblemSizeMax+1);
     costMachine.reserve(subProblemSizeMax+1);
     LNS_.reserve(subProblemSizeMax+1);
@@ -751,8 +750,6 @@ void Search::LNSnew() {
     notImprovements = 0;
     subProblemSize = MRBD::subProblemSizeInit;
     bestCosts.push_back(instance_.getObjectiveCostFull());
-    createSubProblem1();
-    optimise();
     while (MRBD::checkTime()) {
         updated_ = 0;
         createSubProblem();
