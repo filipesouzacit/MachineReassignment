@@ -165,6 +165,52 @@
 					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
+			<Target title="CarSequence">
+				<Option output="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/CarSequence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/fdesouza/rep/MachineReassignment/."/>
+					<Add directory="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 CarSequence"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CarSequence/fast">
+				<Option output="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/CarSequence" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/Users/fdesouza/rep/MachineReassignment/."/>
+					<Add directory="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/bin/../include/c++/v1"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/13.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 CarSequence/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
 			<Target title="edit_cache">
 				<Option working_dir="/Users/fdesouza/rep/MachineReassignment/cmake-build-debug"/>
 				<Option type="4"/>
@@ -222,6 +268,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/fdesouza/rep/MachineReassignment/car-sequencing.cpp">
+			<Option target="CarSequence"/>
+		</Unit>
 		<Unit filename="/Users/fdesouza/rep/MachineReassignment/chuffed/branching/branching.cpp">
 			<Option target="chuffed"/>
 		</Unit>

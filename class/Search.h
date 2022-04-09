@@ -118,6 +118,8 @@ namespace MRBD {
         }
         inline Id getBestProcessBasedOnCost(Id p, Id p1){
             Id pBest = p;
+            instance_.updateCostByProcess(p);
+            instance_.updateCostByProcess(p1);
             if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
                (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
                 pBest = p1;
@@ -278,6 +280,44 @@ namespace MRBD {
                 maxFailures += failures_;
             }
         }
+        inline void setSubProblemHeuristic(Id i){
+            switch (i) {
+                case 0:
+                    getBestProcess = &Search::getBestProcessBasedOnCost;
+                    break;
+                case 1:
+                    getBestProcess = &Search::getBestProcessBasedOnImprovement;
+                    break;
+                case 2:
+                    getBestProcess = &Search::getBestProcessBasedOnChanges;
+                    break;
+                case 3:
+                    getBestProcess = &Search::getBestProcessBasedOnUsage;
+                    break;
+                case 4:
+                    getBestProcess = &Search::getBestProcessBasedOnConflictDirect;
+                    break;
+                default:
+                    break;
+            }
+        }
+        inline void setSubProblemHeuristicRandom(){
+            Id i = randNum()%5;
+            setSubProblemHeuristic(i);
+        }
+        inline void AdapSubProblemHeuristic(){
+            Qtt successVal = success[0] < 10? 10 : success[0];
+            double successRat = successVal/(total[0]*1.0);
+            heuristicId=0;
+            for (Id i=1;i<5;i++){
+                successVal = success[i] < 10? 10 : success[i];
+                if (successVal/(total[i]*1.0) > successRat) {
+                    heuristicId = i;
+                    successRat = successVal/(total[0]*1.0);
+                }
+            }
+            setSubProblemHeuristic(heuristicId);
+        }
 
         inline void createSubProblem() {
             unassignedProcesses = {};
@@ -305,9 +345,13 @@ namespace MRBD {
                 createSubProblemWeightedVariableConflictDirect();
             }else  if (MRBD::selectProcesses == 11){
                 createSubProblemWeightedVariableCost();
-            }else  if (MRBD::selectProcesses == 12){
-                createSubProblemWeightedVariableCostOverUsed();
-            }else{
+            }else  if (MRBD::selectProcesses < 17){
+                createSubProblemWeightedOverUsed();
+            }else if (MRBD::selectProcesses == 17){
+                setSubProblemHeuristicRandom(); // remove
+                createSubProblemWeightedOverUsed();
+            }else if (MRBD::selectProcesses == 18){
+                AdapSubProblemHeuristic(); // remove
                 createSubProblemWeightedOverUsed();
             }
             mapIdsForLNS();
@@ -510,12 +554,14 @@ namespace MRBD {
         inline void updateSubProblemSizeAdapt(){
             totalItera[numMachine-1]++;
             totalSize[subProblemId]++;
+            total[heuristicId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
 //                printBestSolution();
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
                 successItera[numMachine-1]++;
                 successSize[subProblemId]++;
+                success[heuristicId]+= (oldObjectiveCost - instance_.bestObjectiveCost()) * (iterations*0.01);
             }else{
                 qttObjetiveFunctionNotImp++;
             }
@@ -524,12 +570,14 @@ namespace MRBD {
 
         inline void updateSubProblemSizePlusOne(){
             totalItera[numMachine-1]++;
+            total[heuristicId]++;
             if (oldObjectiveCost > instance_.bestObjectiveCost()) {
 //                printBestSolution();
                 notImprovements = 0;
                 qttObjetiveFunctionNotImp = 0;
                 isImprov = true;
                 successItera[numMachine-1]++;
+                success[heuristicId]+= (oldObjectiveCost - instance_.bestObjectiveCost()) * (iterations*0.01);
                 subProblemSize = MRBD::subProblemSizeInit;
             }else{
                 notImprovements++;
@@ -764,6 +812,8 @@ namespace MRBD {
         std::vector<Qtt> successItera;
         std::vector<Qtt> totalSize;
         std::vector<Qtt> successSize;
+        std::vector<Qtt> total;
+        std::vector<Qtt> success;
         std::vector<Qtt> subProblemSizes = {10,20,30,40,50,60,70,80,90,100};
         std::vector<Id> machineIndices;
         std::vector<Id> machineIndices1;
@@ -799,6 +849,7 @@ namespace MRBD {
         Cost unassignedCost_ = 0;
         Id parent_ = -2;
         Id mIndex = 0;
+        Id heuristicId = 0;
         bool toGetBestMachine = true;
         bool firstSort = false;
         bool isImprov = true;

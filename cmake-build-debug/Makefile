@@ -156,6 +156,19 @@ main/fast:
 .PHONY : main/fast
 
 #=============================================================================
+# Target rules for targets named CarSequence
+
+# Build rule for target.
+CarSequence: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CarSequence
+.PHONY : CarSequence
+
+# fast build rule for target.
+CarSequence/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarSequence.dir/build.make CMakeFiles/CarSequence.dir/build
+.PHONY : CarSequence/fast
+
+#=============================================================================
 # Target rules for targets named ROAED2012
 
 # Build rule for target.
@@ -167,6 +180,30 @@ ROAED2012: cmake_check_build_system
 ROAED2012/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/ROAED2012.dir/build.make CMakeFiles/ROAED2012.dir/build
 .PHONY : ROAED2012/fast
+
+car-sequencing.o: car-sequencing.cpp.o
+.PHONY : car-sequencing.o
+
+# target to build an object file
+car-sequencing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarSequence.dir/build.make CMakeFiles/CarSequence.dir/car-sequencing.cpp.o
+.PHONY : car-sequencing.cpp.o
+
+car-sequencing.i: car-sequencing.cpp.i
+.PHONY : car-sequencing.i
+
+# target to preprocess a source file
+car-sequencing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarSequence.dir/build.make CMakeFiles/CarSequence.dir/car-sequencing.cpp.i
+.PHONY : car-sequencing.cpp.i
+
+car-sequencing.s: car-sequencing.cpp.s
+.PHONY : car-sequencing.s
+
+# target to generate assembly for a file
+car-sequencing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CarSequence.dir/build.make CMakeFiles/CarSequence.dir/car-sequencing.cpp.s
+.PHONY : car-sequencing.cpp.s
 
 chuffed/branching/branching.o: chuffed/branching/branching.cpp.o
 .PHONY : chuffed/branching/branching.o
@@ -1472,10 +1509,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... CarSequence"
 	@echo "... ROAED2012"
 	@echo "... chuffed"
 	@echo "... main"
 	@echo "... ortoolsTest"
+	@echo "... car-sequencing.o"
+	@echo "... car-sequencing.i"
+	@echo "... car-sequencing.s"
 	@echo "... chuffed/branching/branching.o"
 	@echo "... chuffed/branching/branching.i"
 	@echo "... chuffed/branching/branching.s"

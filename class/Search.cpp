@@ -32,6 +32,9 @@ Search::Search()
     }
 
     switch (MRBD::selectProcesses) {
+        case 12:
+            getBestProcess = &Search::getBestProcessBasedOnCost;
+            break;
         case 13:
             getBestProcess = &Search::getBestProcessBasedOnImprovement;
             break;
@@ -82,6 +85,10 @@ Search::Search()
     for(Id i=0;i<subProblemSizes.size();i++){
         successSize.push_back(0);
         totalSize.push_back(1);
+    }
+    for(Id i=0;i<5;i++){
+        success.push_back(0);
+        total.push_back(1);
     }
 }
 
@@ -491,40 +498,6 @@ void Search::createSubProblemWeightedVariableCost(){
             instance_.updateCostByProcess(p1);
             if(instance_.process(p)->cost < instance_.process(p1)->cost){
                 p = p1;
-            }
-        }
-        setUnassigned(p);
-        instance_.unassignProcess(p);
-    }
-}
-
-void Search::createSubProblemWeightedVariableCostOverUsed(){
-    Id p1,p,s;
-    p = getRandomProcess();
-    instance_.updateCostByProcess(p);
-    for(Id i=0; i<10;i++){
-        p1 = getRandomProcess();
-        instance_.updateCostByProcess(p1);
-        p = getBestProcessBasedOnCost(p,p1);
-    }
-    setUnassigned(p);
-    instance_.unassignProcess(p);
-
-    while(unassignedProcessQtt < subProblemSize){
-        s = instance_.process(p)->serviceId;
-        p = getRandomProcess(s);
-        instance_.updateCostByProcess(p);
-        if(notFound){
-            for(Id i=0; i<10;i++){
-                p1 = getRandomProcess();
-                instance_.updateCostByProcess(p1);
-                p = getBestProcessBasedOnCost(p,p1);
-            }
-        }else{
-            for(Id i=0; i<10;i++){
-                p1 = getRandomProcessRelated(s);
-                instance_.updateCostByProcess(p1);
-                p = getBestProcessBasedOnCost(p,p1);
             }
         }
         setUnassigned(p);
