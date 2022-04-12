@@ -1,17 +1,5 @@
 #!/bin/bash
-g++ -std=c++14  -o MachineReassignment MachineReassignment.cpp
-chmod a+x MachineReassignment
-chmod a+x script1.run
-chmod a+x script2.run
-chmod a+x script3.run
-chmod a+x script4.run
-chmod a+x script5.run
-nohup ./script1.run > ../result/data/out220408-S1.log &
-nohup ./script2.run > ../result/data/out220408-S2.log &
-nohup ./script3.run > ../result/data/out220408-S3.log &
-nohup ./script4.run > ../result/data/out220408-S4.log &
-nohup ./script5.run > ../result/data/out220408-S5.log &
-
+d
 ssh fdesouza@143.239.81.1 -p 40022
 ssh fdesouza@143.239.81.140
 
@@ -56,6 +44,31 @@ tar -zxvf prog-1-jan-2005.tar.gz
 
 tar -zcvf ../data/072.tar.gz 072/
 
+
+tar -zxvf gdrive_2.1.1_linux_386.tar.gz
+sudo cp gdrive /usr/local/bin/gdrive;
+fdesouza@node006:~$ sudo chmod a+x /usr/local/bin/gdrive
+
+
+
+
+rm -r 10*
+
+mv ../solution/11*/  ../transfer/
+
+zip -r 109.zip 109/
+zip -r 110.zip 110/
+zip -r 111.zip 111/
+zip -r 112.zip 112/
+zip -r 113.zip 113/
+
+gdrive upload 107.zip
+gdrive upload 108.zip
+gdrive upload 109.zip
+gdrive upload 110.zip
+gdrive upload 111.zip
+gdrive upload 112.zip
+gdrive upload 113.zip
 
 du -sh 072.tar.gz
 

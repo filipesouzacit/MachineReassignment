@@ -1,5 +1,5 @@
 include "globals.mzn";
-include "chuffed.mzn";
+%include "chuffed.mzn";
 set of int:P; 
 set of int:B; 
 set of int:M;

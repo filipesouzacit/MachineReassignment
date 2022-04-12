@@ -120,16 +120,18 @@ namespace MRBD {
             Id pBest = p;
             instance_.updateCostByProcess(p);
             instance_.updateCostByProcess(p1);
-            if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
-               (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
+//            if((instance_.process(p)->cost/(instance_.process(p)->used+1.0)) <
+//               (instance_.process(p1)->cost/(instance_.process(p1)->used+1.0))){
+            if((instance_.process(p)->cost) < (instance_.process(p1)->cost)){
                 pBest = p1;
             }
             return pBest;
         }
         inline Id getBestProcessBasedOnConflictDirect(Id p, Id p1){
             Id pBest = p;
-            if((instance_.process(p)->conflict/(instance_.process(p)->used+1.0)) <
-               (instance_.process(p1)->conflict/(instance_.process(p1)->used+1.0))){
+ //           if((instance_.process(p)->conflict/(instance_.process(p)->used+1.0)) <
+ //              (instance_.process(p1)->conflict/(instance_.process(p1)->used+1.0))){
+            if((instance_.process(p)->conflict) < (instance_.process(p1)->conflict)){
                 pBest = p1;
             }
             return pBest;
@@ -143,16 +145,18 @@ namespace MRBD {
         }
         inline Id getBestProcessBasedOnChanges(Id p, Id p1){
             Id pBest = p;
-            if((instance_.process(p)->changes/(instance_.process(p)->used+1.0)) <
-               (instance_.process(p1)->changes/(instance_.process(p1)->used+1.0))){
+//            if((instance_.process(p)->changes/(instance_.process(p)->used+1.0)) <
+//               (instance_.process(p1)->changes/(instance_.process(p1)->used+1.0))){
+            if(instance_.process(p)->changes<instance_.process(p1)->changes){
                 pBest = p1;
             }
             return pBest;
         }
         inline Id getBestProcessBasedOnImprovement(Id p, Id p1){
             Id pBest = p;
-            if((instance_.process(p)->improv/(instance_.process(p)->used+1.0)) <
-               (instance_.process(p1)->improv/(instance_.process(p1)->used+1.0))){
+//            if((instance_.process(p)->improv/(instance_.process(p)->used+1.0)) <
+//               (instance_.process(p1)->improv/(instance_.process(p1)->used+1.0))){
+            if(instance_.process(p)->improv<instance_.process(p1)->improv){
                 pBest = p1;
             }
             return pBest;
