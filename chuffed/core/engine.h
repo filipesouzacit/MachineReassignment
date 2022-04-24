@@ -28,7 +28,7 @@ class Engine {
 public:
     static const int num_queues = 6;
 
-    // Problem setup
+    // CarSeqProblem setup
     vec<IntVar*> vars;              // List of int vars
     vec<Branching*> outputs;        // List of output vars
     vec<Propagator*> propagators;   // List of propagators

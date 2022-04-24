@@ -373,7 +373,7 @@ namespace MRBD {
             createDomain();
         }
         inline void saveSolution() {
-            if (instance_.bestObjectiveCost() > ((instance_).*(instance_.getObjectiveCost))()) {
+            if (instance_.bestObjectiveCost() >= ((instance_).*(instance_.getObjectiveCost))()) {
                 instance_.setBestObjectiveCost(((instance_).*(instance_.getObjectiveCost))());
 //                if(parent_==-1)
 //                    ts_[ts_.size()-1].isBest = TRUE_;
@@ -384,6 +384,9 @@ namespace MRBD {
                                              instance_.process(LNS_[i].idProcess)->currentMachineId);
 
                 instance_.updateBestSolution();
+                //if (instance_.bestObjectiveCost() > ((instance_).*(instance_.getObjectiveCost))()) {
+                //    failuresQtt = MRBD::failuresMax; // removes it
+               // }
             }
             else{
                 failuresQtt++;

@@ -113,7 +113,7 @@ add_library(chuffed
 add_executable(ROAED2012 main1.cpp)
 
 add_executable(ortoolsTest ortoolsTest.cpp)
-add_executable(CarSequence car-sequencing.cpp)
+add_executable(CarSequence mainCarSequencing.cpp)
 
 add_executable(main EXCLUDE_FROM_ALL main.cpp )
 target_link_libraries(main chuffed ${CMAKE_THREAD_LIBS_INIT})

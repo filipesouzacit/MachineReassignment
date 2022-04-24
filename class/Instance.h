@@ -679,7 +679,7 @@ namespace MRBD
         }
 
         inline void updateBestSolution(){
-            if(bestObjectiveCostFull_ > getObjectiveCostFull()){
+            if(bestObjectiveCostFull_ >= getObjectiveCostFull()){
                 bestObjectiveCostFull_ = getObjectiveCostFull();
                 for(Id i=0;i<qttProcesses();i++){
                     processes_[i].bestMachineIdFull = processes_[i].bestMachineId;

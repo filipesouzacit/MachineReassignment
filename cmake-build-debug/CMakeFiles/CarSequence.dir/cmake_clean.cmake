@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/CarSequence.dir/car-sequencing.cpp.o"
+  "CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o"
   "CarSequence"
   "CarSequence.pdb"
 )

@@ -66,27 +66,27 @@ include CMakeFiles/CarSequence.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/CarSequence.dir/flags.make
 
-CMakeFiles/CarSequence.dir/car-sequencing.cpp.o: CMakeFiles/CarSequence.dir/flags.make
-CMakeFiles/CarSequence.dir/car-sequencing.cpp.o: ../car-sequencing.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CarSequence.dir/car-sequencing.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CarSequence.dir/car-sequencing.cpp.o -c /Users/fdesouza/rep/MachineReassignment/car-sequencing.cpp
+CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o: CMakeFiles/CarSequence.dir/flags.make
+CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o: ../mainCarSequencing.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o -c /Users/fdesouza/rep/MachineReassignment/mainCarSequencing.cpp
 
-CMakeFiles/CarSequence.dir/car-sequencing.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CarSequence.dir/car-sequencing.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fdesouza/rep/MachineReassignment/car-sequencing.cpp > CMakeFiles/CarSequence.dir/car-sequencing.cpp.i
+CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/fdesouza/rep/MachineReassignment/mainCarSequencing.cpp > CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.i
 
-CMakeFiles/CarSequence.dir/car-sequencing.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CarSequence.dir/car-sequencing.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fdesouza/rep/MachineReassignment/car-sequencing.cpp -o CMakeFiles/CarSequence.dir/car-sequencing.cpp.s
+CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/fdesouza/rep/MachineReassignment/mainCarSequencing.cpp -o CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.s
 
 # Object files for target CarSequence
 CarSequence_OBJECTS = \
-"CMakeFiles/CarSequence.dir/car-sequencing.cpp.o"
+"CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o"
 
 # External object files for target CarSequence
 CarSequence_EXTERNAL_OBJECTS =
 
-CarSequence: CMakeFiles/CarSequence.dir/car-sequencing.cpp.o
+CarSequence: CMakeFiles/CarSequence.dir/mainCarSequencing.cpp.o
 CarSequence: CMakeFiles/CarSequence.dir/build.make
 CarSequence: CMakeFiles/CarSequence.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/fdesouza/rep/MachineReassignment/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable CarSequence"
