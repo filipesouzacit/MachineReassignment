@@ -4,8 +4,14 @@
 #include "class/carSequencing.cpp"
 
 using namespace carSeq;
-int main() {
+int main(int argc, char** argv) {
     Str fileName = "../dataCar/pb_400_10.txt";
+    Param param;
+    for (int i=1; i<argc; ++i){
+        param = getParam(argv[i]);
+        if(param.name=="file")
+            fileName = (Id) std::stol(param.value);
+
     CarSeqProblem problem = CarSeqProblem(fileName);
     problem.InitSolution();
 

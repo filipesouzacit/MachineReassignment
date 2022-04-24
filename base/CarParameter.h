@@ -39,6 +39,28 @@ namespace carSeq
     typedef int64_t Qtt;
     typedef std::string Str;
 
+    struct Param{
+        Str name;
+        Str value;
+    };
+
+    Param getParam(std::string line){
+        std::vector<std::string> v;
+        std::stringstream ss(line);
+        std::string tmp;
+        while (getline(ss, tmp, '=')) {
+            v.push_back(tmp);
+        }
+        Param p;
+        if(v.size()==2){
+            p.name = v[0];
+            p.value = v[1];
+        }else{
+            p.name = "None";
+        }
+        return p;
+    }
+
     std::vector<std::string> split(std::string line)
     {
         std::vector<std::string> v;
